@@ -1,0 +1,38 @@
+// --------- ObjectSans-Black -------------
+@font-face{
+    font-family:"Poppins-regular";
+    src:url("../../../asset/fonts/Poppins-Regular.eot");
+    src:url("../../../asset/fonts/Poppins-Regular.woff2") format('woff2'),
+    url("../../../asset/fonts/Poppins-Regular.woff") format('woff'),
+    url("../../../asset/fonts/Poppins-Regular.ttf") format('truetype'),
+    url("../../../asset/fonts/Poppins-Regular.svg") format('svg');
+    font-weight:400;
+}
+
+// --------- ObjectSans Regular/Normal -------------
+@font-face{
+    font-family:"Poppins-medium";
+    src:url("../../../asset/fonts/Poppins-Medium.eot");
+    src:url("../../../asset/fonts//Poppins-Medium.woff2") format('woff2'),
+    url("../../../asset/fonts/Poppins-Medium.woff") format('woff'),
+    url("../../../asset/fonts/Poppins-Medium.ttf") format('truetype'),
+    url("../../../asset/fonts/Poppins-Medium.svg") format('svg');
+    font-weight:500;
+}
+
+// --------- Roboto Regular/Normal -------------
+@font-face{
+    font-family:"Poppins-bold";
+    src:url("../../../asset/fonts/Poppins-Bold.eot");
+    src:url("../../../asset/fonts/Poppins-Bold.woff2") format('woff2'),
+    url("../../../asset/fonts/Poppins-Bold.woff") format('woff'),
+    url("../../../asset/fonts/Poppins-Bold.ttf") format('truetype'),
+    url("../../../asset/fonts/Poppins-Bold.svg") format('svg');
+    font-weight:700;
+}
+
+
+
+$ff-poppins-regular:"Poppins-regular", sans-serif;
+$ff-poppins-medium:"Poppins-medium", sans-serif;
+$ff-poppins-bold:"Poppins-bold", sans-serif;

@@ -1,0 +1,100 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+// .contact-us{
+//     &__form{
+//         .form__control{
+//             border:none;
+//             background: transparent;
+//         }
+//     }
+//     &__medium{
+//         margin-top: rem(16);
+//         @include breakpoint-sm{
+//             margin-top: rem(32);
+//         }
+//         &--link{
+//             @include flex-center-vertical;
+//             gap:rem(24);
+//             border-bottom: 1.5px solid $clr-grey-light-3;
+//             padding-block: em(24);
+
+//             &:hover{
+//                 color:$clr-secondary;
+//                 border-color: $clr-secondary;
+//                 svg{
+//                     path{
+//                         fill:$clr-secondary;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+//     &__socials{
+//         margin-top: rem(32);
+//         @include breakpoint-lg{
+//             margin-top: rem(25);
+//         }
+//         p{
+//             font-size: rem(16);
+//         }
+//         &--list{
+//             @include flex-center-vertical;
+//             gap:rem(24);
+//             margin-top: rem(10);
+//         }
+//         &--link{
+//             width: rem(36);
+//             height: rem(36);
+//            @include flex-center;
+//             border-radius: 2px;
+//             border: solid 1px $clr-primary;
+//             background-color: $clr-white;
+//             &:hover{
+//                 border: solid 1px $clr-secondary;
+//                 background-color: $clr-secondary;
+//                 svg{
+//                     path{
+//                         fill:$clr-white;
+//                     }
+//                 }
+//             }
+//             span{
+//                 display: flex;
+//             }
+//         }
+//     }
+
+// }
+
+// .cta-map{
+//     position: relative;
+//     &__find-us{
+//         padding:em(28) em(16);
+//         max-width: 100%;
+//         background-color: $clr-secondary;
+//         @include breakpoint-sm{
+//             padding:em(30) em(20);
+//             position: absolute;
+//             margin-top: rem(-130);
+//         }
+//         @include breakpoint-lg{
+//             padding:em(40) em(32);
+//         }
+//         a{
+//             text-decoration:underline;
+//             text-decoration-color: $clr-white;
+//             -moz-text-decoration-color: $clr-white;
+//             text-underline-offset: 2px;
+//         }
+//     }
+//     &__location{
+//         @include flex-center-vertical;
+//         gap:rem(12);
+//     }
+// }

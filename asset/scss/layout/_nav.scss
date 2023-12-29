@@ -1,0 +1,86 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// ======== Navbar Top =========
+.navbar-top{
+    background-color: $clr-primary;
+    padding-block: 0.25em;
+    display: none;
+    @include breakpoint-lg{
+        display: block;
+    }
+    &__socials{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__link{
+        @include breakpoint-lg{
+            font-size: 15px;
+        }
+        @include breakpoint-xl{
+            font-size: 17px;
+        }
+        &:hover{
+            color:orangered;
+        }
+    }
+}
+
+// ======== Navbar Bottom =========
+
+.navbar-bottom{
+    background: rgba(255, 255, 255, 50%);
+    // background-color: skyblue;
+    padding-block: 0.5em;
+}
+
+.navbar{
+    display: none;
+    @include breakpoint-lg{
+        display: flex;
+    }
+    &__nav{
+        display: flex;
+        align-items: center;
+        @include breakpoint-lg{
+            column-gap: 12px;
+        }
+        @include breakpoint-xl{
+            column-gap: 16px;
+        }
+        @include breakpoint-xxl{
+            column-gap: 18px;
+        }
+    }
+    &__link{
+        font-size: rem(14);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: $clr-black;
+        padding:0.6em 0.5em;
+        @include border-radius(5px);
+        &:hover{
+            background: $clr-primary;
+            color:$clr-white;
+        }
+        @include breakpoint-xl{
+            font-size: rem(16);
+        }
+    }
+}

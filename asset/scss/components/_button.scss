@@ -1,0 +1,173 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.btn{
+    display: inline-block;
+    outline:none;
+    border:none;
+    position: relative;
+    overflow: hidden;
+    font-size:rem(16);
+    padding:em(6) em(20);
+    color:$clr-white;
+    @include border-radius(10px);
+    @include transition(all, 0.35s, ease-out);
+    text-transform: capitalize;
+    z-index: 1;
+
+    &::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+        @include dimensions(rem(20), rem(20));
+        @include border-radius(50%);
+        z-index: -1;
+	}
+    &::before {
+		left: -30%;
+	}
+	&::after {
+		left: 125%;
+	}
+    &:hover{
+        cursor: pointer;
+        &::before {
+			animation: collisionLeft 0.35s both;
+			animation-direction: alternate;
+		}
+		&::after {
+			animation: collisionRight 0.35s both;
+			animation-direction: alternate;
+		}
+    }
+	@keyframes collisionLeft {
+		0% {
+			left: -30%;
+			width: 20px;
+			height: 20px;
+		}
+		50% {
+			left: 50%;
+			width: 40px;
+			height: 40px;
+		}
+		100% {
+			left: 50%;
+			width: 300px;
+			height: 300px;
+		}
+	}
+	@keyframes collisionRight {
+		0% {
+			left: 125%;
+			width: 20px;
+			height: 20px;
+		}
+		50% {
+			left: 50%;
+			width: 40px;
+			height: 40px;
+		}
+		100% {
+			left: 50%;
+			width: 300px;
+			height: 300px;
+		}
+	}
+}
+
+.btn--primary{
+    background-color:$clr-secondary;
+    border:1px solid transparent;
+    &:hover{
+        border-color: $clr-white;
+    }
+}
+
+.btn--secondary{
+    background:$clr-white;
+    color:$clr-black-1;
+    border:1px solid $clr-white;
+    &::before,
+	&::after {
+        background-color: $clr-secondary;
+    }
+    &:hover{
+        color:$clr-white;
+    }
+}
+
+.btn--tertiary{
+    background:$clr-white;
+    color:$clr-secondary;
+}
+
+.btn--transparent{
+    background:transparent;
+    color:$clr-secondary;
+    display: inline-flex;
+    align-items: center;
+    gap:rem(16);
+    padding-inline:0;
+    padding-block:em(6);
+    &:hover{
+        padding-inline:em(16);
+        svg{
+            path{
+                fill:$clr-white;
+            }
+        }
+    }
+}
+
+.btn--outline{
+    background: transparent;
+    color:$clr-secondary;
+    border:1px solid $clr-secondary;
+    &:hover{
+        border-color: $clr-white;
+    }
+}
+
+.btn--primary,
+.btn--tertiary,
+.btn--transparent,
+.btn--outline{
+    &::before,
+    &::after {
+        background-color: $clr-primary;
+    }
+}
+
+.btn--tertiary,
+.btn--transparent,
+.btn--outline{
+    &:hover{
+        color:$clr-white;
+    }
+}
+
+
+
+.search-btn{
+    background: transparent;
+    border:none;
+    outline:none;
+
+    &:hover{
+        cursor: pointer;
+        svg{
+            path{
+                opacity: 0.8;
+                fill:$clr-secondary;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+.loader-container{
+    position: fixed;
+    inset:0;
+    @include dimensions(100%, 100vh);
+    background: $clr-primary;
+    z-index: 1000000;
+    @include flex-center;
+    pointer-events: none;
+}
+.loader {
+    width: fit-content;
+    font-family: $ff-poppins-regular;
+    font-size: clamp(1.5rem, 4vw + 1rem, 2.5rem);
+    background: radial-gradient(circle closest-side,$clr-secondary 94%,$clr-primary) right/calc(200% - 1em) 100%;
+    animation: loader-anim 1s infinite alternate linear;
+
+    &::before{
+        content: "Loading...";
+        line-height: 1em;
+        color: $clr-white;
+        background: inherit;
+        background-image: radial-gradient(circle closest-side,$clr-white 94%,$clr-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    @include keyframes(loader-anim){
+        100% {
+            background-position: left
+        }
+    }
+}

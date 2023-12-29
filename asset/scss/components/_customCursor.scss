@@ -1,0 +1,32 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+.cursor{
+    position: fixed;
+    @include dimensions(rem(40), rem(40));
+    margin-left: -20px;
+    margin-top: -20px;
+    border:2px solid $clr-secondary;
+    @include border-radius(50%);
+    @include transition(transform, 0.35s, ease-out);
+    transform-origin:center center;
+    pointer-events: none;
+    z-index: 100;
+    transform:scale(0.2);
+    background: $clr-secondary;
+}
+
+.grow,
+.grow-small {
+    transform:scale(4.5);
+    background: $clr-white-100;
+    mix-blend-mode:difference;
+    border:none;
+}
+
+.grow-small{
+    transform:scale(2.4);
+}

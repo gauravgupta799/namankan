@@ -1,0 +1,175 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+.main{
+    overflow: hidden;
+    position: relative;
+}
+
+.header__menu,
+.footer__list,
+.socials__list,
+.header__mobile-list,
+.header__submenu,
+.contact-us__socials--list,
+.header__submenu--mobile{
+    list-style: none;
+}
+
+.request_quote{
+    position: fixed;
+    top: 50%;
+    transform: translate(200px, -50%) rotate(-90deg);
+    right: 0;
+    opacity: 0;
+    z-index: 1;
+    visibility: hidden;
+    pointer-events: none;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    @include transition(all, 1.5s, ease);
+    &.show-quote-btn{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(85px, -50%) rotate(-90deg);
+        @include breakpoint-md{
+            transform: translate(95px, -50%) rotate(-90deg);
+        }
+        @include breakpoint-lg{
+            transform: translate(105px, -50%) rotate(-90deg);
+        }
+    }
+    a{
+        @include border-radius(40px);
+        @include flex-center;
+        gap: rem(16);
+    }
+    span{
+        &:nth-child(1){
+            @include flex-center;
+            @include dimensions(rem(25), rem(25));
+            background: $clr-white;
+            @include border-radius(50%);
+            @include breakpoint-md{
+                @include dimensions(rem(30), rem(30));
+            }
+            @include breakpoint-lg{
+                @include dimensions(rem(35), rem(35));
+            }
+            @include breakpoint-xl{
+                @include dimensions(rem(40), rem(40));
+            }
+        }
+    }
+    &:hover{
+        svg{
+            path{
+                fill:$clr-primary;
+            }
+        }
+    }
+}
+
+.footer__link{
+    position: relative;
+    display: inline-block;
+    // @include transition(all, 0.5s, ease-out);
+    &::before{
+        content:"";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        background: $clr-secondary;
+        @include transition(transform, 0.3s, ease-out);
+        transform:scaleX(0);
+        transform-origin: left;
+    }
+    &:hover{
+        color:$clr-secondary;
+    }
+}
+
+.header__mobile-link.active{
+    color:$clr-secondary;
+}
+
+// .footer-socials-link{
+//     @include flex-center;
+//     justify-content: space-between;
+//     padding: em(6);
+//     @include dimensions(rem(45), rem(45));
+//     @include border-radius(50%);
+//     background: transparent;
+//     @include transition(all, 0.4s, ease-out);
+//     &:hover{
+//         background: $clr-secondary;
+//         svg{
+//             transform:scale(1.2);
+//             path{
+//                 fill:$clr-primary !important;
+//             }
+//         }
+//     }
+// }
+
+.contact__socials-link{
+    @include flex-center;
+    padding: em(6);
+    @include dimensions(rem(45), rem(45));
+    @include border-radius(50%);
+    background: transparent;
+    @include transition(all, 0.4s, ease-out);
+    &:hover{
+        background: $clr-primary;
+        svg {
+            path{
+                fill:$clr-white;
+            }
+        }
+    }
+}
+
+// Socials Styles
+.socials{
+    &__link{
+        @include flex-center;
+        width: rem(45);
+        height: rem(45);
+        @include flex-center;
+        @include border-radius(50%);
+        border:1px solid transparent;
+        &:hover{
+            border: solid 1px $clr-secondary;
+            background-color: $clr-secondary;
+            svg{
+                path{
+                    fill:$clr-white;
+                }
+            }
+        }
+    }
+}
+
+// Stars
+// .stars{
+//     .star{
+//         font-size: rem(18);
+//         color:$clr-yellow;
+//     }
+// }
+
+
+// Checked Box
+.checked-box{
+    padding: em(5);
+    background-color: $clr-secondary;
+    @include border-radius(50%);
+    @include flex-center;
+}
