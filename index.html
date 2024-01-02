@@ -5,18 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" content="notranslate" />
-  <!-- <link rel="shortcut icon" href="" type="image/svg+xml"> -->
-  <title> Namankan| Homepage</title>
+  <link rel="shortcut icon" href="./asset/logos/study-logo.png" type="image/svg+xml">
+  <title> Study | Homepage</title>
   <!-- all css bundled and minified -->
   <link rel="stylesheet" href="dist/bundle.min.css" type="text/css">
 </head>
 <body class="body">
   <!-- page loader start -->
   <div class="loader">
-    <div class="loader__wrapper-one">
-    </div>
-    <div class="loader__wrapper-two">
-      <span class="loader__indication"><span id="loader-indication">0</span>%</span>
+    <div class="loading">
+      <p>loading</p>
+       <span></span>
     </div>
   </div>
  <!-- page loader end -->
@@ -32,22 +31,22 @@
              <ul class="navbar-top__socials">
                <li class="navbar-top__social-list">
                  <a href="#" class="navbar-top__social-link">
-                   <img src="./asset/icons/social-media/x-twitter.svg" class="img-fluid" alt="" loading="lazy">
+                   <img src="./asset/icons/social-media/facebook.svg" class="img-fluid" alt="facebook" loading="lazy">
                  </a>
                </li>
                <li class="navbar-top__social-list">
                  <a href="#" class="navbar-top__social-link">
-                   <img src="./asset/icons/social-media/facebook.svg" class="img-fluid" alt="" loading="lazy">
+                   <img src="./asset/icons/social-media/instagram.svg" class="img-fluid" alt="instagram" loading="lazy">
                  </a>
                </li>
                <li class="navbar-top__social-list">
-                 <a href="#" class="navbar-top__social-link">
-                   <img src="./asset/icons/social-media/instagram.svg" class="img-fluid" alt="" loading="lazy">
-                 </a>
-               </li>
+                <a href="#" class="navbar-top__social-link">
+                  <img src="./asset/icons/social-media/x-twitter.svg" class="img-fluid" alt="twitter" loading="lazy">
+                </a>
+              </li>
                <li class="navbar-top__social-list">
                  <a href="#" class="navbar-top__social-link">
-                   <img src="./asset/icons/social-media/linkedin.svg" class="img-fluid" alt="" loading="lazy">
+                   <img src="./asset/icons/social-media/linkedin.svg" class="img-fluid" alt="linkedin" loading="lazy">
                  </a>
                </li>
                <li class="navbar-top__social-list">
@@ -95,7 +94,7 @@
          <div class="navbar-container">
              <div class="header-logo">
                <a href="index.html">
-                 <img class="img-fluid" src="./asset/logos/study-logo.png" alt="namankan logo" />
+                 <img class="img-fluid" src="./asset/logos/study-logo.png" alt="study logo" />
                </a>
              </div>
              <nav class="navbar">
@@ -104,13 +103,13 @@
                    <li class="navbar__Item"><a href="universites.html" class="navbar__link">Universitites</a></li>
                    <li class="navbar__Item"><a href="colleges.html" class="navbar__link">Colleges</a></li>
                    <li class="navbar__Item"><a href="schools.html" class="navbar__link">Schools</a></li>
+                   <li class="navbar__Item"><a href="courses.html" class="navbar__link">Courses</a></li>
                    <li class="navbar__Item"><a href="exams.html" class="navbar__link">Exams</a></li>
                    <li class="navbar__Item"><a href="blogs.html" class="navbar__link">Blogs</a></li>
                    <li class="navbar__Item"><a href="news.html" class="navbar__link">News</a></li>
-                   <li class="navbar__Item"><a href="news.html" class="navbar__link">Menu</a></li>
-                   <li class="navbar__dropdown">
+                   <li class="navbar__dropdown navbar__link">
                       <a href="/" class="">
-                        <span class="new_hamburgur">
+                        <span class="hamburgur">
                           <span class="menu-line"></span>
                           <span class="menu-line"></span>
                           <span class="menu-line"></span>
@@ -129,7 +128,7 @@
                    <li class="navbar__Item"><a href="login.html" class="navbar__link">Login</a></li>
                </ul>
              </nav>
-             <span class="new_hamburgur new_hamburgur--mobile">
+             <span class="hamburgur hamburgur--mobile">
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
                 <span class="menu-line"></span>
@@ -146,7 +145,7 @@
            <div class="header__mobile--top">
                <div class="header__logo">
                    <a href="/index.html">
-                    <img class="header-logo__img img-fluid" src="./asset/img/yourhustler-logo.svg" alt="youHustler logo" />
+                    <img class="header-logo__img img-fluid" src="./asset/logos/study-logo.png" alt=" logo" />
                    </a>
                </div>
                <ul class="header__mobile-list">
@@ -163,6 +162,7 @@
                   <li class="header__mobile-item"><a href="nri-quota.html" class="header__mobile-link">NRI Quota</a></li>
                   <li class="header__mobile-item"><a href="study-aboard.html" class="header__mobile-link">Study Aboard</a></li>
                   <li class="header__mobile-item"><a href="scholarships.html" class="header__mobile-link">Scholarships</a></li>
+                  <li class="header__mobile-item"><a href="contact.html" class="header__mobile-link">Contact Us</a></li>
                   <li class="header__mobile-item"><a href="login.html" class="header__mobile-link">Login</a></li>
                </ul>
                <!-- <div class="btnWrapper--mobile mt--2">
@@ -240,7 +240,7 @@
                       <input type="text" name="location" id="location" class="form-control" placeholder="Enter Location" required>
                     </div>
                     <div class="form-group mb--1">
-                        <textarea class="form-control" name="message" id="inputID" rows="3" placeholder="Type Your Message"></textarea>
+                        <textarea class="form-control" name="message" id="inputID" rows="6" placeholder="Type Your Message"></textarea>
                     </div>
                     <div class="text-center mt--2">
                       <button type="submit" class="btn btn--primary submit_message home_submit_message">Talk to Experts</button>
@@ -941,7 +941,7 @@
                       <input type="text" name="location" id="location" class="form-control" placeholder="Enter Location" required>
                     </div>
                     <div class="form-group mb--1">
-                        <textarea class="form-control" name="message" id="inputID" rows="3" placeholder="Type Your Message"></textarea>
+                        <textarea class="form-control" name="message" id="inputID" rows="6" placeholder="Type Your Message"></textarea>
                     </div>
                     <div class="text-center mt--2">
                       <button type="submit" class="btn btn--primary submit_message home_submit_message">Get Guidance</button>
@@ -1612,6 +1612,14 @@
     </section>
      <!-- Portals End -->
 
+     <!-- scroll-to-top start -->
+     <div class="backToTop">
+        <div class="backToTop__wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 384 512"><path opacity="1" fill="#37475a" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+        </div>
+     </div>
+     <!-- scroll-to-top end -->
+
   </main>
   <!-- ======== main ends ========== -->
 
@@ -1668,23 +1676,23 @@
                         <path id="Icon_ionic-ios-pin" data-name="Icon ionic-ios-pin" d="M18,3.375c-5.59,0-10.125,4.212-10.125,9.4C7.875,20.088,18,32.625,18,32.625S28.125,20.088,28.125,12.776C28.125,7.587,23.59,3.375,18,3.375ZM18,16.8a3.3,3.3,0,1,1,3.3-3.3A3.3,3.3,0,0,1,18,16.8Z" transform="translate(-7.875 -3.375)" fill="#fff"/>
                       </svg>
                   </span>             
-                  <span>651 N. Broad St. Suite 206 Middletown, DE 19709</span>
+                  <span>651 N. Broad St., Banglore, India, 920123</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@yourhustler.com" class="footer-link__item ">
+                <a href="mailto:study@gmail.com" class="footer-link__item ">
                   <span class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 31.003 20.928">
                     <path id="Icon_zocial-email" data-name="Icon zocial-email" d="M.072,23.142V5.922q0-.03.09-.568L10.3,14.024.192,23.74a2.534,2.534,0,0,1-.12-.6ZM1.417,4.158a1.288,1.288,0,0,1,.508-.09h27.3a1.693,1.693,0,0,1,.538.09l-10.165,8.7-1.345,1.076-2.661,2.182-2.661-2.182-1.345-1.076Zm.03,20.748L11.642,15.13l3.946,3.2,3.946-3.2L29.73,24.906a1.435,1.435,0,0,1-.508.09H1.926a1.354,1.354,0,0,1-.478-.09ZM20.88,14.024l10.105-8.67a1.784,1.784,0,0,1,.09.568V23.142a2.291,2.291,0,0,1-.09.6Z" transform="translate(-0.072 -4.068)" fill="#fff"/>
                   </svg></span>
-                 <span> contact@yourhustler.com</span>
+                 <span> study@gmail.com</span>
                 </a>
               </li>
               <li>
-                <a href="tel:3022869562" class="footer-link__item">
+                <a href="tel:9102286956" class="footer-link__item">
                  <span class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 27.01 27.008">
                   <path id="Icon_ionic-ios-call" data-name="Icon ionic-ios-call" d="M30.72,25.65a22.686,22.686,0,0,0-4.739-3.171c-1.42-.682-1.941-.668-2.946.056-.837.6-1.378,1.167-2.341.956s-2.862-1.645-4.7-3.48-3.277-3.741-3.48-4.7.359-1.5.956-2.341c.724-1.005.745-1.526.056-2.946A22.238,22.238,0,0,0,10.35,5.28c-1.034-1.034-1.266-.809-1.835-.6a10.443,10.443,0,0,0-1.68.893A5.069,5.069,0,0,0,4.816,7.7c-.4.865-.865,2.475,1.5,6.68a37.272,37.272,0,0,0,6.553,8.74h0l.007.007.007.007h0a37.418,37.418,0,0,0,8.74,6.553c4.2,2.362,5.815,1.9,6.68,1.5a4.983,4.983,0,0,0,2.13-2.018,10.443,10.443,0,0,0,.893-1.68C31.528,26.916,31.76,26.684,30.72,25.65Z" transform="translate(-4.49 -4.502)" fill="#fff"/>
                 </svg> </span>           
-                  <span> 302 286 9562</span>
+                  <span> 9102286956</span>
                 </a>
               </li>
             </ul>
@@ -1696,17 +1704,17 @@
     <div class="page-container py--1">
       <div class="row">
         <div class="col-sm-6">
-          <small class="copy-right-text text-white mt--0">©2023 Namankan Inc. | All Rights Reserved </small>
+          <small class="copy-right-text text-white mt--0">©2023 Study Inc. | All Rights Reserved </small>
         </div>
         <div class="col-sm-6 d-flex justify-content-sm-end">
           <ul class="footer-socials-link mt--1 mt--lg--0">
-            <li><a href="https://www.facebook.com/yourhustlerinc/" target="_blank" class="footer-social-link__item"><img src="https://www.yourhustler.com/wp-content/themes/yourhustler/asset/img/social-media/facebook.svg" alt="facebook" class="footer-social-link__icon"></a>
+            <li><a href="https://www.facebook.com" target="_blank" class="footer-social-link__item"><img src="./asset/icons/social-media/facebook.svg" class="img-fluid" alt="facebook" loading="lazy"></a>
             </li>
-            <li><a href="https://www.instagram.com/yourhustlerinc/" target="_blank" class="footer-social-link__item"><img src="https://www.yourhustler.com/wp-content/themes/yourhustler/asset/img/social-media/instagram.svg" alt="instagram" class="footer-social-link__icon"></a>
+            <li><a href="https://www.instagram.com" target="_blank" class="footer-social-link__item"><img src="./asset/icons/social-media/instagram.svg" class="img-fluid" alt="instagram" loading="lazy"></a>
             </li>
-            <li><a href="https://www.linkedin.com/company/yourhustlerinc/" target="_blank" class="footer-social-link__item"><img src="https://www.yourhustler.com/wp-content/themes/yourhustler/asset/img/social-media/linkedin.svg" alt="linkedin" class="footer-social-link__icon"></a>
+            <li><a href="https://www.linkedin.com" target="_blank" class="footer-social-link__item"><img src="./asset/icons/social-media/x-twitter.svg" class="img-fluid" alt="twitter" loading="lazy"></a>
             </li>
-            <li><a href="https://www.youtube.com/@yourhustlerinc/" target="_blank" class="footer-social-link__item"><img src="https://www.yourhustler.com/wp-content/themes/yourhustler/asset/img/social-media/youtube.svg" alt="Youtube" class="footer-social-link__icon"></a>
+            <li><a href="https://www.youtube.com" target="_blank" class="footer-social-link__item"> <img src="./asset/icons/social-media/linkedin.svg" class="img-fluid" alt="linkedin" loading="lazy"></a>
             </li>
           </ul>
         </div>

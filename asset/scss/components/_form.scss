@@ -118,7 +118,7 @@
     color: #fff;
     padding: 2em 1em;
     @include border-radius(30px);
-    @include breakpoint-lg{
+    @include breakpoint-xxl{
         padding: 2em;
     }
 }
@@ -127,7 +127,15 @@
     background: hsla(0,0%,100%,.4);
     color: #fff!important;
     width: 100%;
-    padding: 10px;
+    padding: em(12) em(16);
     border-radius: 10px;
     outline:none;
+    caret-color: $clr-secondary;
+    font-size: rem(16);
+    letter-spacing: 1px;
+    font-family: $ff-poppins-regular !important;
+    border:none;
+    &:focus{
+        outline:2px solid $clr-secondary;
+    }
 }

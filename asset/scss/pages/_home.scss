@@ -263,6 +263,8 @@
 .portals{
     background: rgba(86,148,227,.06);
 }
+
+
 .play-btn{
     width: 94px;
     height: 94px;
@@ -320,3 +322,30 @@
 
 }
 
+// Scroll To Top
+.backToTop{
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 10;
+    @include dimensions(rem(45), rem(45));
+    background: $clr-teriary;
+    @include border-radius(50%);
+    @include transition(all, 0.35s, ease-out);
+    border:1px solid $clr-teriary;
+    display: none;
+    
+    &__wrapper{
+        @include flex-center;
+        @include full-dimensions;
+    }
+    &:hover{
+        background: $clr-grey-light;
+        cursor: pointer;
+        svg{
+            path{
+                fill:$clr-teriary;
+            }
+        }
+    }
+}

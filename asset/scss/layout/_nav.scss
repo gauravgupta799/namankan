@@ -14,7 +14,7 @@
 // ======== Navbar Top =========
 .navbar-top{
     background-color: $clr-primary;
-    padding-block: 0.25em;
+    padding-block: 0.4em;
     display: none;
     @include breakpoint-lg{
         display: block;
@@ -37,7 +37,7 @@
             font-size: 17px;
         }
         &:hover{
-            color:orangered;
+            color:rgb(235, 92, 41);
         }
     }
 }
@@ -46,7 +46,6 @@
 
 .navbar-bottom{
     background: rgba(255, 255, 255, 50%);
-    // background-color: skyblue;
     padding-block: 0.5em;
 }
 
@@ -76,6 +75,13 @@
         padding:0.6em 0.5em;
         @include border-radius(5px);
         &:hover{
+            background: $clr-primary;
+            color:$clr-white;
+            .menu-line{
+                background: $clr-white;
+            }
+        }
+        &.active{
             background: $clr-primary;
             color:$clr-white;
         }

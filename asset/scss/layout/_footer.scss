@@ -32,18 +32,38 @@
     margin-top: rem(16);
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
-}
-
-.footer-link{
+    row-gap: rem(16);
     &__item{
         font-size: 16px;
         @include breakpoint-lg{
             font-size: 18px;
         }
+        &:hover{
+            color:$clr-secondary;
+            svg{
+                path{
+                    fill:$clr-secondary;
+                }
+            }
+        }
     }
+    // &__address{
+    //     @include breakpoint-lg{
+    //      margin-top: -35px;
+    //     }
+    //     @include breakpoint-xl{
+    //      margin-top: -18px;
+    //     }
+    // }
 }
 
+.footer-address{
+    .footer-link__item{
+        display: flex;
+        align-items: center;
+        gap:10px;
+    }
+}
 
 .socials{
     &__list{
@@ -56,5 +76,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: 32px;
+    column-gap: rem(32);
+    @include breakpoint-xl{
+        column-gap: rem(38);
+    }
 }
