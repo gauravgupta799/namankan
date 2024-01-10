@@ -26,9 +26,8 @@
 .text-secondary{
     color:$clr-secondary;
 }
-.text-center,
-.text-lg-center{
-    text-align:center;
+.text-center{
+    text-align:center !important;
 }
 .text-left{
     text-align:left
@@ -80,6 +79,9 @@
     background:$clr-grey-light-2;
 }
 
+// .overflow-hidden{
+//     overflow: hidden;
+// }
 
 .heading-wrapper{
     overflow: hidden;

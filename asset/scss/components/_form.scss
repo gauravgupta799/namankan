@@ -5,115 +5,8 @@
 @use '../abstract/mixins' as *;
 
 
-// .form{
-//     &__group{
-//         margin-bottom: rem(16);
-//         position: relative;
-//         &--footer{
-//             display: flex;
-//             background: $clr-white;
-//             @include border-radius(9px);
-//         }
-//     }
-//     &__icon{
-//         position: absolute;
-//         padding: em(9.6) 0 em(12) em(16);
-//         pointer-events: none;
-//     }
-//     &__control{
-//         width: 100%;
-//         background: $clr-white-90;
-//         border:none;
-//         outline:2px solid transparent;
-//         padding: em(12) em(24);
-//         color:$clr-primary;
-//         font-size: rem(16);
-//         line-height: 2.5;
-//         font-family: $ff-regular;
-//         caret-color: $clr-secondary;
-//         @include border-radius(2px);
-//         &:focus, &:hover{
-//             outline-color: $clr-secondary;  
-//         }
-//         &--footer{
-//             border-top-right-radius:0px;
-//             border-bottom-right-radius:0px;
-//             background-color: $clr-white;
-//         }
-//         &--contact, &--select, &--textarea{
-//             outline:2px solid $clr-border;
-//             padding-left: em(50);
-//         }
-//     }
-// }
-
-// button[type="submit"]{
-//     padding: 0.9em 2em;
-// }
-
-
-// Custome Checkbox
-// .form__group .form-check-input {
-//     padding: 0;
-//     @include dimensions(initial, initial);
-//     margin-bottom: 0;
-//     display: none;
-//     cursor: pointer;
-// }
-  
-// .form__group .form-check-label{
-//     text-transform: capitalize;
-//     position: relative;
-//     cursor: pointer;
-//     @include flex-center-vertical;
-// }
-  
-// .form__group .form-check-label::before {
-//     content:'';
-//     background-color: transparent;
-//     border: 1.8px solid $clr-primary;
-//     @include border-radius(1px);
-//     padding: em(8);
-//     display: inline-block;
-//     position: relative;
-//     vertical-align: middle;
-//     cursor: pointer;
-//     margin-right: rem(10);
-//     @include breakpoint-md{
-//         margin-right: rem(32);
-//         padding: em(10);
-//     }
-// }
-// .form__group .form-check-input:checked + .form-check-label::before{
-//     border-color: $clr-secondary;
-// }
-  
-// .form__group .form-check-input:checked + .form-check-label::after {
-//     content: '';
-//     display: block;
-//     position: absolute;
-//     top: 8px;
-//     left: 6px;
-//     @include dimensions(rem(6.4), rem(12));
-//     border: 1.8px solid $clr-secondary;
-//     border-width: 0 1px 1px 0;
-//     transform: rotate(45deg);
-
-//     @include breakpoint-md{
-//         left: 8px;
-//         width:rem(8);
-//     }
-//     @include breakpoint-lg{
-//         top: 10px;
-//         left: 7px;
-//         height: rem(16);
-//     }
-// }
-
-
 .form-wrapper {
     background: rgba(0,0,0,.6);
-    color: #fff;
     border:1px solid rgba(255,255,255,.6);
     color: #fff;
     padding: 2em 1em;
@@ -122,13 +15,46 @@
         padding: 2em;
     }
 }
+#form-signup{
+    background:transparent;
+    border:none;
+    .form-control{
+        outline:1px solid $clr-black;
+        color:$clr-black;
+        font-size: rem(18);
+        &::placeholder{
+            color:$clr-black;
+            font-size: rem(18);
+        }
+        &:focus{
+            outline:2px solid $clr-primary;
+        }
+    }
+    h5{
+        color:$clr-black;
+        span{
+            color:$clr-primary;
+        }
+    }
+    label{
+        color:$clr-black;
+    }
+    p{
+        a{
+            color:$clr-primary;
+            &:hover{
+                color:$clr-grey-dark;
+            }
+        }
+    }
+}
 
 .form-control{
     background: hsla(0,0%,100%,.4);
-    color: #fff!important;
+    color: #fff;
     width: 100%;
     padding: em(12) em(16);
-    border-radius: 10px;
+    @include border-radius(10px);
     outline:none;
     caret-color: $clr-secondary;
     font-size: rem(16);
@@ -137,5 +63,64 @@
     border:none;
     &:focus{
         outline:2px solid $clr-secondary;
+    }
+}
+
+.search-form{
+    .form-group{
+        background: rgb(255, 255, 255) url("/asset/icons/search-icon.svg") 20px center no-repeat;
+        height: 60px;
+        @include border-radius(10px);
+        display: flex;
+        align-items: center;
+        padding-right: em(16);
+    }
+    input{
+        height: 100%;
+        outline:none !important;
+        padding:0px 0px 0px em(48);
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            // transform: scaleX(0);
+            transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+            border-bottom: 2px solid #3949ab;
+            pointer-events: none;
+        }
+        &:focus{
+            &::after{
+                  transform: scaleX(1);
+            }
+        }
+    }
+}
+
+.terms-policy{
+    color:$clr-accent;
+    &:hover{
+        color:$clr-teriary;
+    }
+}
+.form-password {
+    display: flex;
+    align-items: center;
+    border:1px solid $clr-grey;
+    @include border-radius(10px);
+    input{
+        border:none !important;
+        outline:none !important;
+    }
+    .input-group-text{
+        @include dimensions(rem(40), rem(45));
+        @include flex-center;
+        background: transparent;
+        svg{
+            @include dimensions(rem(20), rem(20));
+        }
+    
     }
 }

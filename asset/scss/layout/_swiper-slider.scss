@@ -5,8 +5,12 @@
 @use "../abstract/mixins" as *;
 
 
+
+.swiper{
+  z-index: auto !important;
+}
 .swiper-pagination-bullet{
-   padding: 10px !important;
+   padding: em(8) !important;
    position: relative;
 }
 
@@ -30,19 +34,9 @@
         }
     }
 }
+.hero-swiper-slide{
+  @media only screen and (min-width: 992px){
+    height: 650px !important;
+  }
+}
 
-
-
-
-
-// .swiper-pagination-bullet-active::before{
-//   content: " ";
-//   position: absolute;
-//   inset:0;
-//   width: 100%;
-//   height: 100%;
-//   border:1px solid red;
-//   @include border-radius(50%);
-//   padding: 5px;
-//   z-index: -1;
-// }

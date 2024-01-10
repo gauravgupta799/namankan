@@ -1,0 +1,82 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.hero-login{
+    background: linear-gradient(359deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)) fixed, 
+        url("/asset/images/login-banner.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+    padding-block:em(100);
+    h1,h4{
+        color:$clr-white;
+        span{
+            color:$clr-primary;
+        }
+    }
+    h4{
+        font-size: rem(30) !important;
+        line-height: 1.2 !important;
+        font-family: $ff-poppins-regular !important;
+    }
+}
+.course-overviews{
+    @include transition(all, 0.5s , ease-in-out);
+    .btns-wrapper{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin:0 auto;
+       li{ 
+            background: #f5eeee;
+            width: 40%;
+            a{
+                color: $clr-black;
+                padding: em(18);
+                display: inline-block;
+                @include full-dimensions;
+            }
+            &.active{
+                @include transition(background, 0.35s , ease-in-out);
+                background: $clr-primary;
+                a{
+                    color:$clr-white;
+                }
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+.share-this{
+    @include flex-center;
+    gap:rem(16);
+    li{
+        display: inline-block;
+        padding:8px;
+        @include dimensions(rem(45), rem(45));
+        @include flex-center;
+        @include border-radius(4px);
+        background:$clr-white;
+        box-shadow:0px 2px 10px rgba(78, 78, 78, 0.9);
+        @include transition(background, 0.25s , ease-in-out);
+        &:hover{
+            background: $clr-primary;
+            cursor: pointer;
+        }
+    }
+}
+
+.signup{
+    @include transition(all, 0.25s , ease-in-out);
+    display: none;
+}
+.login{
+    @include transition(all, 0.25s , ease-in-out);
+    display: block;
+}

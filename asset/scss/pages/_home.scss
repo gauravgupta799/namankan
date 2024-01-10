@@ -13,21 +13,19 @@
 }
 .hero{
     &__maskSection{
-        padding-block: 2em;
+        padding:em(16);
         width: 100%;
-        background: #2e2e2e;
+        background: $clr-black-4;
         margin-top: -7px;
         @include breakpoint-lg{
             background-color:rgba(0,0,0,0.2);
-            padding-block: 4em;
             position: absolute;
-            top: 12%;
+            top: 32px;
             z-index: 1;
             margin-top: 0;
         }
     }
 }
-
 // ========= Features ====================
 
 .counter-wrapper{
@@ -77,7 +75,6 @@
     }
 }
 .courses{
-    // background-color: $clr-teriary;
     background: rgba(86,148,227,.06);
     .course{
         display: flex;
@@ -98,8 +95,6 @@
 
 .cta-banner{
     position: relative;
-    // background: linear-gradient(359deg, rgba(175, 88, 88, 0.24), rgba(90, 95, 95, 0.5)) fixed, 
-    //     url("/asset/images/bg-img-1.png");
     background: linear-gradient(359deg, rgba(175, 88, 88, 0.24), rgba(0, 0,0, 0.8)) fixed, 
         url("/asset/images/bg-img-1.png");
 }
@@ -325,16 +320,20 @@
 // Scroll To Top
 .backToTop{
     position: fixed;
-    bottom: 16px;
-    right: 16px;
+    bottom: rem(80);
+    right: rem(22);
     z-index: 10;
     @include dimensions(rem(45), rem(45));
     background: $clr-teriary;
     @include border-radius(50%);
-    @include transition(all, 0.35s, ease-out);
+    @include transition(all, 1s, ease-in-out);
     border:1px solid $clr-teriary;
-    display: none;
-    
+    @include flex-center;
+    @include transform(translateY(300%));
+    &.show{
+        @include transform(translateY(0));
+    }
+  
     &__wrapper{
         @include flex-center;
         @include full-dimensions;
@@ -348,4 +347,41 @@
             }
         }
     }
+}
+
+.broucher-wrapper{
+    position: fixed;
+    top: 40%;
+    left: -71px;
+    z-index: 2;
+    background-color: $clr-primary;
+    padding: em(5) em(10);
+    @include border-radius(10px);
+    // transform: rotate(90deg);
+    @include transform(rotate(90deg));
+    @include transition(left, 0.45s, ease-in-out);
+    cursor: pointer;
+    a{
+        letter-spacing: 9px;
+        font-size: rem(16);
+        position: relative;
+    }
+    &.hide{
+        left:-160px;
+    }
+}
+
+// WhatsApp Link
+.whatsapplink{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    @include dimensions(rem(60), rem(60));
+    @include border-radius(50px);
+    @include flex-center;
+    background-color: #25d366;
+    color: $clr-white;
+    font-size: rem(44);
+    box-shadow: 0px 2px 310x #999;
+    z-index: 1059;
 }

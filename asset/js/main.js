@@ -1,14 +1,35 @@
 // document.getElementById("year").innerHTML = new Date().getFullYear();
-// const body = document.querySelector(".body");
+const html = document.querySelector("html");
 const header = document.querySelector('.header');
 
-//======  Loader start ======
+/* ====== Loader Start======= */
 window.onload = () => {
   const loader = document.querySelector(".loader");
   loader.style.display = "none";
+  // setTimeout(() => {
+  //   toogleModal();
+  // },3000)
 }
+/* ====== Loader End ======= */
 
-//========= Scroll to Top  =============
+
+/* ====== Modal Start ======= */
+const broucherBtn = document.querySelector(".broucher-wrapper");
+const closeBtn = document.querySelector(".close");
+
+function toogleModal(){
+  const backdrop = document.querySelector(".modal-backdrop");
+  const modalDialog = document.querySelector(".modal-dialog");
+  backdrop.classList.toggle("show");
+  modalDialog.classList.toggle("show");
+  html.classList.toggle("overflow-hidden")
+}
+broucherBtn.addEventListener("click", toogleModal);
+closeBtn.addEventListener("click", toogleModal);
+/* ====== Modal End ======= */
+
+
+/* ====== Scroll to Top Start ======= */
 var backToTopButton = document.querySelector('.backToTop');
 backToTopButton.addEventListener('click', function (){
   window.scrollTo({
@@ -18,17 +39,19 @@ backToTopButton.addEventListener('click', function (){
 });
 
 function backToTop() {
-  if (window.scrollY > 300) {
-    backToTopButton.style.display = 'block';
+  if (window.scrollY > 350) {
+    backToTopButton.classList.add("show");
+    broucherBtn.classList.add("hide");
   } else {
-    backToTopButton.style.display = 'none';
+    backToTopButton.classList.remove("show");
+    broucherBtn.classList.remove("hide");
   }
 }
 window.addEventListener('scroll', backToTop)
-//====== Loader end ======
+/* ====== Scroll to Top End ======= */
 
 
-//====== Mobile Menu Toggle start ======
+/* ====== Mobile Menu Toggle Start ====== */
 $(document).ready(function() {
     $('.hamburgur--mobile').click(function(){
         $(".header__mobile").addClass('open');
@@ -41,9 +64,10 @@ $(document).ready(function() {
         $("html").removeClass("overflow-hidden");
     });
 });
-//====== Mobile Menu Toggle end ======
+/* ====== Mobile Menu Toggle End ====== */
 
-//====== Swipers start ======
+
+/* ====== Swipers Start ====== */
 const swiper1 = new Swiper(".heroSwiper",{
     slidesPerView:1,
     loop:true,
@@ -59,24 +83,26 @@ const swiper1 = new Swiper(".heroSwiper",{
       clickable: true,
     },
 });
+/* ====== Swipers End ====== */
 
-// const swiper2 = new Swiper(".swiper-customers", {
-//     spaceBetween:30,
-//     slidesPerView:1,
-//     grabCursor:true,
-//     autoplay:{
-//       delay:3000,
-//     },
-//     breakpoints:{
-//         768:{
-//             slidesPerView:2,
-//         },
-//     }
-// });
-//====== Swipers end ======
+/* ====== Signup/Login Form Start ====== */
+$('#signup-btn').on('click', function () {
+  $(".signup").css('display', 'block');
+  $(".login").css("display","none");
+  $("#signup-btn").addClass("active");
+  $("#login-btn").removeClass("active");
+})
+$('#login-btn').on('click', function () {
+  $(".signup").css('display', 'none');
+  $(".login").css("display","block");
+  $("#signup-btn").removeClass("active");
+  $("#login-btn").addClass("active");
+})
+/* ====== Signup/Login Form End ====== */
 
 
-//====== Active Page Link start ======
+
+/* ====== Active Page Link Start ====== */
 const windowPathName = window.location.pathname;
 const navLinks = document.querySelectorAll(".navbar__link");
 if(navLinks !== null) {
@@ -87,22 +113,4 @@ if(navLinks !== null) {
     }
   });
 }
-//====== Active Page Link end ======
-
-
-
-
-
-//====== Sticky header start ======
-// function toggleHeaderSticky(scrollY){
-//   if (scrollY > 20){
-//     header.classList.add("sticky");
-//   }else{
-//     header.classList.remove("sticky");
-//   }
-// }
-// window.addEventListener("scroll",()=>{
-//   const scrollY = window.scrollY;
-//   toggleHeaderSticky(scrollY);
-// });
-//====== Sticky header end ======
+/* ====== Active Page Link End ====== */
