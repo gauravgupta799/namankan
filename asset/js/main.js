@@ -6,9 +6,9 @@ const header = document.querySelector('.header');
 window.onload = () => {
   const loader = document.querySelector(".loader");
   loader.style.display = "none";
-  // setTimeout(() => {
-  //   toogleModal();
-  // },3000)
+  setTimeout(() => {
+    toogleModal();
+  },3000)
 }
 /* ====== Loader End ======= */
 
