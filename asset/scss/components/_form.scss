@@ -114,12 +114,27 @@
         border:none !important;
         outline:none !important;
     }
-    .input-group-text{
-        @include dimensions(rem(40), rem(45));
+    .eye-btn{
+        @include dimensions(rem(48), rem(54));
         @include flex-center;
         background: transparent;
+        border-left: 1px solid $clr-grey;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
         svg{
             @include dimensions(rem(20), rem(20));
+        }
+        &:hover{
+            cursor: pointer;
+            background-color: $clr-primary;
+            svg{
+                path{
+                    fill:$clr-white;
+                }
+            }
+        }
+        .eye-close{
+            display: none;
         }
     
     }

@@ -13,12 +13,13 @@
 }
 .hero{
     &__maskSection{
-        padding:em(16);
+        padding-inline:em(16);
         width: 100%;
         background: $clr-black-4;
         margin-top: -7px;
         @include breakpoint-lg{
-            background-color:rgba(0,0,0,0.2);
+            // background-color:rgba(0,0,0,0.2);
+            background:transparent;
             position: absolute;
             top: 32px;
             z-index: 1;
@@ -259,7 +260,6 @@
     background: rgba(86,148,227,.06);
 }
 
-
 .play-btn{
     width: 94px;
     height: 94px;
@@ -321,7 +321,7 @@
 .backToTop{
     position: fixed;
     bottom: rem(80);
-    right: rem(22);
+    right: rem(18);
     z-index: 10;
     @include dimensions(rem(45), rem(45));
     background: $clr-teriary;
@@ -349,17 +349,21 @@
     }
 }
 
-.broucher-wrapper{
+.broucher-wrapper,
+.socials-aside{
     position: fixed;
-    top: 40%;
-    left: -71px;
+    top: 38%;
     z-index: 2;
     background-color: $clr-primary;
     padding: em(5) em(10);
     @include border-radius(10px);
-    // transform: rotate(90deg);
-    @include transform(rotate(90deg));
     @include transition(left, 0.45s, ease-in-out);
+}
+
+// Broucher aside
+.broucher-wrapper{
+    left: -71px;
+    @include transform(rotate(90deg));
     cursor: pointer;
     a{
         letter-spacing: 9px;
@@ -370,13 +374,25 @@
         left:-160px;
     }
 }
+// SOcials aside
+.socials-aside {
+    top:28%;
+    right: -9px;
+    @include transform(rotate(360deg));
+    ul{
+        li{
+            margin-block:5px;
+        }
+
+    }
+}
 
 // WhatsApp Link
 .whatsapplink{
     position: fixed;
     bottom: 15px;
     right: 15px;
-    @include dimensions(rem(60), rem(60));
+    @include dimensions(rem(50), rem(50));
     @include border-radius(50px);
     @include flex-center;
     background-color: #25d366;

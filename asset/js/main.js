@@ -8,10 +8,9 @@ window.onload = () => {
   loader.style.display = "none";
   setTimeout(() => {
     toogleModal();
-  },3000)
+  },5000)
 }
 /* ====== Loader End ======= */
-
 
 /* ====== Modal Start ======= */
 const broucherBtn = document.querySelector(".broucher-wrapper");
@@ -27,7 +26,6 @@ function toogleModal(){
 broucherBtn.addEventListener("click", toogleModal);
 closeBtn.addEventListener("click", toogleModal);
 /* ====== Modal End ======= */
-
 
 /* ====== Scroll to Top Start ======= */
 var backToTopButton = document.querySelector('.backToTop');
@@ -85,6 +83,27 @@ const swiper1 = new Swiper(".heroSwiper",{
 });
 /* ====== Swipers End ====== */
 
+
+/* ====== Toggle Password Start ======= */
+const showPasswordButton = document.querySelector('.eye-btn');
+if(showPasswordButton !== null){
+  showPasswordButton.addEventListener('click', function(event){
+    event.preventDefault();
+    const passwordInputField = document.querySelector(".password-field");
+    if(passwordInputField.type === "password"){
+      passwordInputField.type = "text";
+      document.querySelector(".eye-close").style.display= "none";
+      document.querySelector(".eye-open").style.display= "block";
+    }else {
+      passwordInputField.type = "password";
+      document.querySelector(".eye-close").style.display= "block";
+      document.querySelector(".eye-open").style.display= "none";
+    }
+  })
+}
+/* ====== Toggle Password End ======= */
+
+
 /* ====== Signup/Login Form Start ====== */
 $('#signup-btn').on('click', function () {
   $(".signup").css('display', 'block');
@@ -99,8 +118,6 @@ $('#login-btn').on('click', function () {
   $("#login-btn").addClass("active");
 })
 /* ====== Signup/Login Form End ====== */
-
-
 
 /* ====== Active Page Link Start ====== */
 const windowPathName = window.location.pathname;

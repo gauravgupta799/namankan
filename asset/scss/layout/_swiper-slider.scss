@@ -9,6 +9,7 @@
 .swiper{
   z-index: auto !important;
 }
+
 .swiper-pagination-bullet{
    padding: em(8) !important;
    position: relative;
@@ -22,8 +23,9 @@
     @include border-radius(50%);
     @include flex-center;
     @include transition(all, 0.35s , ease-out);
+    top:55.5% !important;
     &::after{
-      font-size: 24px !important;
+      font-size: rem(24) !important;
       color:$clr-grey-dark !important;
     }
     &:hover{
@@ -34,9 +36,18 @@
         }
     }
 }
+
+.swiper-button-prev{
+  left: rem(40) !important;
+}
+
+.swiper-button-next{
+  right: rem(50) !important;
+}
+
 .hero-swiper-slide{
-  @media only screen and (min-width: 992px){
-    height: 650px !important;
+  @media only screen and (min-width: 62em){
+    height: rem(660) !important;
   }
 }
 
