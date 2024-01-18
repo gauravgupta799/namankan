@@ -33,10 +33,7 @@
     flex-direction: column;
     row-gap: rem(16);
     &__item{
-        font-size: 16px;
-        @include breakpoint-lg{
-            font-size: 18px;
-        }
+        font-size: rem(16);
         &:hover{
             color:$clr-secondary;
             svg{
@@ -46,14 +43,14 @@
             }
         }
     }
-    // &__address{
-    //     @include breakpoint-lg{
-    //      margin-top: -35px;
-    //     }
-    //     @include breakpoint-xl{
-    //      margin-top: -18px;
-    //     }
-    // }
+    &__address{
+        @include breakpoint-lg{
+         margin-top: -32px;
+        }
+        @include breakpoint-xl{
+         margin-top: -16px;
+        }
+    }
 }
 
 .footer-address{

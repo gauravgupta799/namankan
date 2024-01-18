@@ -1,0 +1,45 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+.breadcrumbs{
+    background: #f5f9fc;
+    padding-block:em(16);
+    ol{
+        @include flex-center-vertical;
+        gap:rem(16);
+        li + li{
+            position: relative;
+            &::before{
+                content: "\ea50";
+                display: inline-block;
+                padding-right: em(10);
+                color: $clr-black;
+                font-family: boxicons !important;
+            }
+        }
+        a{
+            color:$clr-black;
+            &.active{
+                color:$clr-primary;
+            }
+        }
+    }
+}
+
+.top-universities{
+    .card__content{
+        h6{
+            text-align:left;
+        }
+    }
+    &__ul{
+        margin-left: rem(16);
+       li{
+            list-style-type:disc !important;
+            list-style-position: inside;
+       }
+    }
+}

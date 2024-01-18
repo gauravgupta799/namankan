@@ -12,12 +12,15 @@
     position: relative;
     overflow: hidden;
     font-size:rem(16);
-    padding:em(6) em(20);
+    padding:em(10) em(24);
     color:$clr-white;
     @include border-radius(10px);
     @include transition(all, 0.35s, ease-out);
     text-transform: capitalize;
     z-index: 1;
+    @include breakpoint-md{
+        font-size: rem(18);
+    }
 
     &::before,
 	&::after {

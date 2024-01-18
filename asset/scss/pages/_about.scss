@@ -1,0 +1,109 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.who-we-are{
+    h4{
+        text-align: center;
+    }
+  
+}
+.our-portals,
+.what-we-do{
+    background: $clr-bg-1;
+    text-align: center;
+}
+.what-we-do{
+    &__box{
+        margin-inline:auto;
+        p{
+            @include breakpoint-sm{
+                padding-inline:em(16);
+            }
+        }
+    }
+}
+
+.progress{
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+    background: none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+    span{
+        width: 50%;
+        overflow: hidden;
+        z-index: 1;
+    }
+    &-left{
+        left: 0;
+    }
+    &-right{
+        right: 0;
+    }
+    &::after{
+        content: "";
+        width: 100%;
+        border-radius: 50%;
+        border: 22px solid #efefef;
+        left: 0;
+    }
+    &::after, .progress > span{
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
+    &-value{
+        display: flex;
+        border-radius: 50%;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 30px;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        font-weight: 300;
+        div{
+            font-size: rem(48);
+            font-family: $ff-poppins-bold;
+            color:$clr-primary;
+            span{
+                font-size: rem(24);
+                color:$clr-black;
+            }
+        }
+    }
+}
+.progress-left .progress-bar{
+    left: 100%;
+    border-top-right-radius: 250px;
+    border-bottom-right-radius: 250px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.progress-right .progress-bar{
+    left: -100%;
+    border-top-left-radius: 250px;
+    border-bottom-left-radius: 250px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+}
+
+.bluecolor{
+    border-color: #4b91d7;
+}
+.contact-us-section{
+    h4{
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: rem(48);
+    }
+}

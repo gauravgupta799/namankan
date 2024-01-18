@@ -85,22 +85,29 @@ const swiper1 = new Swiper(".heroSwiper",{
 
 
 /* ====== Toggle Password Start ======= */
-const showPasswordButton = document.querySelector('.eye-btn');
-if(showPasswordButton !== null){
-  showPasswordButton.addEventListener('click', function(event){
-    event.preventDefault();
-    const passwordInputField = document.querySelector(".password-field");
-    if(passwordInputField.type === "password"){
-      passwordInputField.type = "text";
-      document.querySelector(".eye-close").style.display= "none";
-      document.querySelector(".eye-open").style.display= "block";
-    }else {
-      passwordInputField.type = "password";
-      document.querySelector(".eye-close").style.display= "block";
-      document.querySelector(".eye-open").style.display= "none";
+// const showPasswordButton = document.querySelectorAll('.eye-btn');
+
+const passwordInputFields = document.querySelectorAll(".form-password");
+passwordInputFields.forEach((passwordField) => {
+  console.log(passwordField);
+  const passField = passwordField.children[0];
+  const eyeBtn = passwordField.children[1];
+  let eyeClose = eyeBtn.children[0];
+  let eyeOpen = eyeBtn.children[1];
+  eyeBtn.addEventListener("click", (e) =>{
+    console.log(e)
+    e.preventDefault()
+    if(passField.type === "password"){
+      passField.type="text";
+      eyeClose.style.display = "none";
+      eyeOpen.style.display = "block";
+    }else{
+      passField.type="password";
+      eyeClose.style.display = "block";
+      eyeOpen.style.display = "none";
     }
-  })
-}
+  });
+});
 /* ====== Toggle Password End ======= */
 
 

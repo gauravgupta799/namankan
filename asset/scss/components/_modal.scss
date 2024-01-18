@@ -73,9 +73,9 @@
 #modal-form{
     .form-group{
         .form-control{
-            border:1px solid #000;
+            border:1px solid $clr-black;
             &::placeholder{
-                color:$clr-grey-light-1 !important;
+                color:$clr-black-2 !important;
             }
         }
     }

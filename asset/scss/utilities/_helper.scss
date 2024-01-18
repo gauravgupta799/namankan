@@ -20,6 +20,9 @@
 .list-none{
     list-style: none;
 }
+.list-disc{
+    list-style-type: disc !important;
+}
 .text-primary{
     color:$clr-primary;
 }
@@ -34,6 +37,9 @@
 }
 .text-right{
     text-align:right;
+}
+.text-justify{
+    text-align:justify;
 }
 .text-white{
     color:$clr-white;
