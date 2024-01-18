@@ -140,10 +140,11 @@
     }
 }
 
-.form-contact{
+.form-contact,
+.contact-us__formContainer{
     input, textarea{
         border:0;
-        outline:1px solid #000;
+        outline:1.5px solid $clr-grey-light;
         color:$clr-black-4;
         &::placeholder{
             color:$clr-grey-light-1;

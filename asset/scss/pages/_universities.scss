@@ -5,7 +5,7 @@
 @use "../abstract/mixins" as *;
 
 .breadcrumbs{
-    background: #f5f9fc;
+    background: $clr-bg-2;
     padding-block:em(16);
     ol{
         @include flex-center-vertical;
@@ -41,5 +41,21 @@
             list-style-type:disc !important;
             list-style-position: inside;
        }
+    }
+}
+
+.cta-bg{
+    background-image: url("/asset/images/sky-blue-bg.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+
+    .form{
+        .form-control{
+            background: $clr-white;
+            color:$clr-black;
+            &::placeholder{
+                color:$clr-black-4;
+            }
+        }
     }
 }

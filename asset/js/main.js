@@ -25,6 +25,11 @@ function toogleModal(){
 }
 broucherBtn.addEventListener("click", toogleModal);
 closeBtn.addEventListener("click", toogleModal);
+
+const applyNowBtn = document.getElementById("apply-now-btn");
+if(applyNowBtn !== null){
+  applyNowBtn.addEventListener("click", toogleModal);
+}
 /* ====== Modal End ======= */
 
 /* ====== Scroll to Top Start ======= */
