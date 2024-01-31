@@ -1,0 +1,59 @@
+@use '../abstract/breakpoints' as *;
+@use '../abstract/colors' as *;
+@use "../abstract/fonts" as *;
+@use '../abstract/functions' as *;
+@use '../abstract/mixins' as *;
+
+
+.video-play-btn{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    @include dimensions(rem(32), rem(44));
+    @include border-radius(50%);
+    padding:em(18) em(20);
+    &::before, &::after{
+        content:"";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(translate(-50%, -50%));
+        @include dimensions(rem(80), rem(80));
+        background:$clr-primary;
+        @include border-radius(50%);
+    }
+    &::before{
+        animation: pulse-border 1.5s ease-out infinite;
+    }
+    &::after{
+        @include transition(all, 0.2s);
+    }
+    &:hover{
+        cursor: pointer;
+        &::after{
+            background-color: darken($clr-primary, 10%);
+        }
+    }
+    span{
+        display: block;
+        position: relative;
+        border-left:rem(26) solid $clr-white;
+        border-top: rem(16) solid transparent;
+        border-bottom: rem(16) solid transparent;
+        z-index: 3;
+        @include transform(translate(-30%, -45%));
+    }
+}
+
+@keyframes pulse-border {
+    0%{
+        transform:translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform:translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}

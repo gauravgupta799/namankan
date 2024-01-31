@@ -174,3 +174,9 @@
         }
     }
 }
+
+.btn-container{
+    @include flex-center-vertical;
+    flex-wrap:wrap;
+    gap:rem(20);
+}

@@ -30,6 +30,14 @@
     align-items: center;
     justify-content: space-between;
 }
+@mixin flex-end-horizontal{
+    display: flex;
+    justify-content: flex-end;
+}
+@mixin flex-end-vertical{
+    display: flex;
+    align-items: flex-end;
+}
 
 @mixin full-dimensions{
     width: 100%;

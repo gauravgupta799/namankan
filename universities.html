@@ -118,13 +118,11 @@
                       <li class="navbar__Item"><a href="blogs.html" class="navbar__link">Blogs</a></li>
                       <li class="navbar__Item"><a href="news.html" class="navbar__link">News</a></li>
                       <li class="navbar__dropdown navbar__link">
-                          <a href="/" class="">
-                            <span class="hamburgur">
-                              <span class="menu-line"></span>
-                              <span class="menu-line"></span>
-                              <span class="menu-line"></span>
-                            </span>
-                          </a>
+                        <span class="hamburgur">
+                          <span class="menu-line"></span>
+                          <span class="menu-line"></span>
+                          <span class="menu-line"></span>
+                        </span>
                           <ul class="navbar-second">
                             <li><a href="/boards.html">Boards</a></li>
                             <li><a href="/services.html">Services</a></li>
@@ -291,12 +289,95 @@
                 Top <span>Universities</span> in Karnataka
             </h3>
             <div class="row mt--4">
-                <div class="col-lg-3">
-
+              <div class=" mb--2" id="filter-menu-btn">
+                <p>Filter</p>
+                <span class="hamburgur">
+                  <span class="menu-line"></span>
+                  <span class="menu-line"></span>
+                  <span class="menu-line"></span>
+                </span>
+              </div>
+                <div class="col-lg-3" id="filter-menu-container">
+                  <div class="filter-menu" id="filter-menu">
+                    <div class="widgets">
+                      <div class="widgets__top">
+                        <div class="widgets__title">
+                          <div class="d-flex align-content-center">
+                            <img src="./asset/images/scholar-cap-image.jpeg" alt=""
+                            class="img-fluid">
+                            <h6>Stream</h6>
+                          </div>
+                          <div class="search-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="19.5" height="19.5">
+                              <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill="#000000"/>
+                          </svg>
+                          </div>
+                        </div>
+                        <div class="widgets__search">
+                          <input type="text" name="stream" class="form-control"
+                           placeholder="Search Stream">
+                        </div>
+                      </div>
+                      <form class="widgets__lists-form">
+                        <ul class="widgets__lists" id="stream">
+                        </ul>
+                      </form>
+                    </div>
+  
+                    <div class="widgets mt--2">
+                      <div class="widgets__top">
+                        <div class="widgets__title">
+                          <div class="d-flex align-content-center">
+                            <img src="./asset/images/scholar-cap-image.jpeg" alt=""
+                            class="img-fluid">
+                            <h6>Ownership</h6>
+                          </div>
+                          <div class="search-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="19.5" height="19.5">
+                              <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill="#000000"/>
+                          </svg>
+                          </div>
+                        </div>
+                        <div class="widgets__search">
+                          <input type="text" name="stream" class="form-control"
+                           placeholder="Search Ownership">
+                        </div>
+                      </div>
+                      <form class="widgets__lists-form">
+                        <ul class="widgets__lists" id="ownership">
+                        </ul>
+                      </form>
+                    </div>
+  
+                    <div class="widgets mt--2">
+                      <div class="widgets__top">
+                        <div class="widgets__title">
+                          <div class="d-flex align-content-center">
+                            <img src="./asset/images/scholar-cap-image.jpeg" alt=""
+                            class="img-fluid">
+                            <h6>City</h6>
+                          </div>
+                          <div class="search-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="19.5" height="19.5">
+                              <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" fill="#000000"/>
+                          </svg>
+                          </div>
+                        </div>
+                        <div class="widgets__search">
+                          <input type="text" name="stream" class="form-control"
+                           placeholder="Search City">
+                        </div>
+                      </div>
+                      <form class="widgets__lists-form">
+                        <ul class="widgets__lists" id="city">
+                        </ul>
+                      </form>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
-                        <div class="col-md-6 col-lg-4 mb--2">
+                        <div class="col-sm-6 col-xl-4 mb--2">
                           <div class="card">
                             <div class="card-wrapper">
                               <figure class="card__figure">
@@ -314,52 +395,81 @@
                               </div>           
                               <div class="card__footer">
                                 <a href="#" class="btn btn--primary">Apply Now</a>
-                                <a href="#" class="btn btn--outline">View Details</a>
+                                <a href="./detail.html" class="btn btn--outline">View Details</a>
                                 </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 col-lg-4 mb--2">
+                        <div class="col-sm-6 col-xl-4 mb--2">
                           <div class="card">
                             <div class="card-wrapper">
-                              <div class="card__header">
-                                <figure class="card__figure">
-                                <img src="./asset/images/universities/university-2.png" alt="" class="img-fluid" loading="lazy">
-                                </figure>
-                                <div class="card__content">
-                                <div class="card__title">
-                                  <h6>CMR University</h6>
-                                </div>
-                                </div>
-                              </div>
+                              <figure class="card__figure">
+                                  <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
+                              </figure>
+                              <div class="card__content">
+                                  <h6 class="">Rajiv Gandhi University of Health Sciences (RGUHS)</h6>
+                                  <p> Bangalore, Approved by UGC</p>
+                                  <hr class="my--1">
+                                  <p><b>University Details</b></p>
+                                  <ul>
+                                      <li>Est. Year: <b>1996</b></li>
+                                      <li>Ownership: <b>Public</b></li>
+                                  </ul>
+                              </div>           
                               <div class="card__footer">
-                              <a href="#" class="btn btn--primary">Apply Now</a>
-                              <a href="#" class="btn btn--outline">View Details</a>
-                              </div>
+                                <a href="#" class="btn btn--primary">Apply Now</a>
+                                <a href="./detail.html" class="btn btn--outline">View Details</a>
+                                </div>
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 col-lg-4 mb--2">
+                        <div class="col-sm-6 col-xl-4 mb--2">
                           <div class="card">
                             <div class="card-wrapper">
-                              <div class="card__header">
-                                <figure class="card__figure">
-                                <img src="./asset/images/universities/university-3.png" alt="" class="img-fluid" loading="lazy">
-                                </figure>
-                                <div class="card__content">
-                                <div class="card__title">
-                                  <h6>Dayanand Sagar University</h6>
-                                </div>
-                                </div>
-                              </div>
+                              <figure class="card__figure">
+                                  <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
+                              </figure>
+                              <div class="card__content">
+                                  <h6 class="">Rajiv Gandhi University of Health Sciences (RGUHS)</h6>
+                                  <p> Bangalore, Approved by UGC</p>
+                                  <hr class="my--1">
+                                  <p><b>University Details</b></p>
+                                  <ul>
+                                      <li>Est. Year: <b>1996</b></li>
+                                      <li>Ownership: <b>Public</b></li>
+                                  </ul>
+                              </div>           
                               <div class="card__footer">
-                              <a href="#" class="btn btn--primary">Apply Now</a>
-                              <a href="#" class="btn btn--outline">View Details</a>
-                              </div>
+                                <a href="#" class="btn btn--primary">Apply Now</a>
+                                <a href="./detail.html" class="btn btn--outline">View Details</a>
+                                </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                        <div class="col-sm-6 col-xl-4 mb--2">
+                          <div class="card">
+                            <div class="card-wrapper">
+                              <figure class="card__figure">
+                                  <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
+                              </figure>
+                              <div class="card__content">
+                                  <h6 class="">Rajiv Gandhi University of Health Sciences (RGUHS)</h6>
+                                  <p> Bangalore, Approved by UGC</p>
+                                  <hr class="my--1">
+                                  <p><b>University Details</b></p>
+                                  <ul>
+                                      <li>Est. Year: <b>1996</b></li>
+                                      <li>Ownership: <b>Public</b></li>
+                                  </ul>
+                              </div>           
+                              <div class="card__footer">
+                                <a href="#" class="btn btn--primary">Apply Now</a>
+                                <a href="./detail.html" class="btn btn--outline">View Details</a>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -414,19 +524,19 @@
                   <div class="form">
                       <h2 class="text-white mb--2">Talk to Our Experts</h2>
                       <form action="" class="form">
-                          <div class="row mb--1">
-                              <div class="col-lg-6 form-group mb--1">
+                          <div class="row">
+                              <div class="col-md-6 form-group mb--1">
                                   <input type="text" name="name" id="name" class="form-control" placeholder="Enter Name" required>
                               </div>
-                              <div class="col-lg-6 form-group mb--1">
+                              <div class="col-md-6 form-group mb--1">
                                   <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required>
                               </div>
                           </div>
-                          <div class="row mb--1">
-                              <div class="col-lg-6 form-group mb--1">
+                          <div class="row">
+                              <div class="col-md-6 form-group mb--1">
                                   <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter Phone Number" required>
                               </div>
-                              <div class="col-lg-6 form-group mb--1">
+                              <div class="col-md-6 form-group mb--1">
                                   <input type="text" name="course" id="course" class="form-control" placeholder="Interested Course" required>
                               </div>
                           </div>
@@ -446,193 +556,191 @@
 
     <!-- Top Universities Start-->
     <section class="universities mt--10">
-    <div class="page-container">
-        <h3 class="text-center">Get Scholarship</h3>
-        <div class="swiper swiper--colleges heroSwiper mt--2">
-        <div class="swiper-wrapper mb--4">
-            <div class="swiper-slide py-5 px-1">
-            <div class="row">
-                <div class="col-lg-4 mb--2 mb--lg--0">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <figure class="card__figure">
-                        <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
-                    </figure>
-                    <div class="card__content">
-                        <h6 class="">Post Graduate Indira Gandhi Scholarship Scheme for Single Girl Child</h6>
-                    </div>           
-                    <div class="card__footer">
+      <div class="page-container">
+          <h3 class="text-center">Get Scholarship</h3>
+          <div class="swiper swiper--colleges heroSwiper mt--2">
+          <div class="swiper-wrapper mb--4">
+              <div class="swiper-slide py-5 px-1">
+              <div class="row">
+                  <div class="col-md-4 mb--2 mb--md--0">
+                    <div class="card">
+                        <div class="card-wrapper">
+                        <figure class="card__figure">
+                            <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
+                        </figure>
+                        <div class="card__content">
+                            <h6 class="">Post Graduate Indira Gandhi Scholarship Scheme for Single Girl Child</h6>
+                        </div>           
+                        <div class="card__footer">
+                            <a href="#" class="btn btn--primary">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb--2 mb--md--0">
+                    <div class="card">
+                        <div class="card-wrapper">
+                        <div class="card__header">
+                            <figure class="card__figure">
+                            <img src="./asset/images/universities/university-2.png" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="card__content">
+                            <div class="card__title">
+                            <h6>National Fellowship and Scholarship for Higher Education of Scheduled Tribe Student</h6>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="card__footer">
                         <a href="#" class="btn btn--primary">Apply Now</a>
                         </div>
+                        </div>
                     </div>
-                </div>
-                </div>
-                <div class="col-lg-4 mb--2 mb--lg--0">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <div class="card__header">
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-wrapper">
+                        <div class="card__header">
+                            <figure class="card__figure">
+                            <img src="./asset/images/universities/university-3.png" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="card__content">
+                            <div class="card__title">
+                            <h6>Prime Minister’s Scholarship Scheme for RPF</h6>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="card__footer">
+                        <a href="#" class="btn btn--primary">Apply Now</a>
+                        <!-- <a href="#" class="btn btn--outline">View Details</a> -->
+                        </div>
+                        </div>
+                    </div>
+                   </div>
+              </div>
+              </div>
+              <div class="swiper-slide py-5 px-1">
+              <div class="row">
+                  <div class="col-md-4 mb--2 mb--md--0">
+                    <div class="card">
+                        <div class="card-wrapper">
                         <figure class="card__figure">
-                        <img src="./asset/images/universities/university-2.png" alt="" class="img-fluid" loading="lazy">
+                            <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
                         </figure>
                         <div class="card__content">
-                        <div class="card__title">
-                        <h6>National Fellowship and Scholarship for Higher Education of Scheduled Tribe Student</h6>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="card__footer">
-                    <a href="#" class="btn btn--primary">Apply Now</a>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <div class="card__header">
-                        <figure class="card__figure">
-                        <img src="./asset/images/universities/university-3.png" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="card__content">
-                        <div class="card__title">
-                        <h6>Prime Minister’s Scholarship Scheme for RPF</h6>
-                        </div>
+                            <h6 class="">Post Graduate Indira Gandhi Scholarship Scheme for Single Girl Child</h6>
+                        </div>           
+                        <div class="card__footer">
+                            <a href="#" class="btn btn--primary">Apply Now</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card__footer">
-                    <a href="#" class="btn btn--primary">Apply Now</a>
-                    <!-- <a href="#" class="btn btn--outline">View Details</a> -->
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="swiper-slide py-5 px-1">
-            <div class="row">
-                <div class="col-lg-4 mb--2 mb--lg--0">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <figure class="card__figure">
-                        <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
-                    </figure>
-                    <div class="card__content">
-                        <h6 class="">Post Graduate Indira Gandhi Scholarship Scheme for Single Girl Child</h6>
-                    </div>           
-                    <div class="card__footer">
+                  </div>
+                  <div class="col-md-4 mb--2 mb--md--0">
+                    <div class="card">
+                        <div class="card-wrapper">
+                        <div class="card__header">
+                            <figure class="card__figure">
+                            <img src="./asset/images/universities/university-2.png" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="card__content">
+                            <div class="card__title">
+                            <h6>National Fellowship and Scholarship for Higher Education of Scheduled Tribe Student</h6>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="card__footer">
                         <a href="#" class="btn btn--primary">Apply Now</a>
                         </div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-4 mb--2 mb--lg--0">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <div class="card__header">
-                        <figure class="card__figure">
-                        <img src="./asset/images/universities/university-2.png" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="card__content">
-                        <div class="card__title">
-                        <h6>National Fellowship and Scholarship for Higher Education of Scheduled Tribe Student</h6>
-                        </div>
                         </div>
                     </div>
-                    <div class="card__footer">
-                    <a href="#" class="btn btn--primary">Apply Now</a>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <div class="card__header">
-                        <figure class="card__figure">
-                        <img src="./asset/images/universities/university-3.png" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="card__content">
-                        <div class="card__title">
-                        <h6>Prime Minister’s Scholarship Scheme for RPF</h6>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-wrapper">
+                        <div class="card__header">
+                            <figure class="card__figure">
+                            <img src="./asset/images/universities/university-3.png" alt="" class="img-fluid" loading="lazy">
+                            </figure>
+                            <div class="card__content">
+                            <div class="card__title">
+                            <h6>Prime Minister’s Scholarship Scheme for RPF</h6>
+                            </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
-                    <div class="card__footer">
-                    <a href="#" class="btn btn--primary">Apply Now</a>
-                    <!-- <a href="#" class="btn btn--outline">View Details</a> -->
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="swiper-slide py-5 px-1">
-            <div class="row">
-                <div class="col-lg-4 mb--2 mb--lg--0">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <figure class="card__figure">
-                        <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
-                    </figure>
-                    <div class="card__content">
-                        <h6 class="">Post Graduate Indira Gandhi Scholarship Scheme for Single Girl Child</h6>
-                    </div>           
-                    <div class="card__footer">
+                        <div class="card__footer">
                         <a href="#" class="btn btn--primary">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-4 mb--2 mb--lg--0">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <div class="card__header">
-                        <figure class="card__figure">
-                        <img src="./asset/images/universities/university-2.png" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="card__content">
-                        <div class="card__title">
-                        <h6>National Fellowship and Scholarship for Higher Education of Scheduled Tribe Student</h6>
+                        <!-- <a href="#" class="btn btn--outline">View Details</a> -->
                         </div>
                         </div>
                     </div>
-                    <div class="card__footer">
-                    <a href="#" class="btn btn--primary">Apply Now</a>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-wrapper">
-                    <div class="card__header">
-                        <figure class="card__figure">
-                        <img src="./asset/images/universities/university-3.png" alt="" class="img-fluid" loading="lazy">
-                        </figure>
-                        <div class="card__content">
-                        <div class="card__title">
-                        <h6>Prime Minister’s Scholarship Scheme for RPF</h6>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="card__footer">
-                    <a href="#" class="btn btn--primary">Apply Now</a>
-                    <!-- <a href="#" class="btn btn--outline">View Details</a> -->
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!-- <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div> -->
-        <div class="swiper-pagination"></div>
-        </div>
-        <div class="button-section text-center mt--2">
-        <a href="scholarships.html" class="btn btn--primary">See All</a>
-        </div>
-    </div>
+                  </div>
+              </div>
+              </div>
+              <div class="swiper-slide py-5 px-1">
+              <div class="row">
+                  <div class="col-md-4 mb--2 mb--md--0">
+                  <div class="card">
+                      <div class="card-wrapper">
+                      <figure class="card__figure">
+                          <img src="./asset/images/universities/university-1.png" alt="" class="img-fluid" loading="lazy">
+                      </figure>
+                      <div class="card__content">
+                          <h6 class="">Post Graduate Indira Gandhi Scholarship Scheme for Single Girl Child</h6>
+                      </div>           
+                      <div class="card__footer">
+                          <a href="#" class="btn btn--primary">Apply Now</a>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="col-md-4 mb--2 mb--md--0">
+                  <div class="card">
+                      <div class="card-wrapper">
+                      <div class="card__header">
+                          <figure class="card__figure">
+                          <img src="./asset/images/universities/university-2.png" alt="" class="img-fluid" loading="lazy">
+                          </figure>
+                          <div class="card__content">
+                          <div class="card__title">
+                          <h6>National Fellowship and Scholarship for Higher Education of Scheduled Tribe Student</h6>
+                          </div>
+                          </div>
+                      </div>
+                      <div class="card__footer">
+                      <a href="#" class="btn btn--primary">Apply Now</a>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="col-md-4">
+                  <div class="card">
+                      <div class="card-wrapper">
+                      <div class="card__header">
+                          <figure class="card__figure">
+                          <img src="./asset/images/universities/university-3.png" alt="" class="img-fluid" loading="lazy">
+                          </figure>
+                          <div class="card__content">
+                          <div class="card__title">
+                          <h6>Prime Minister’s Scholarship Scheme for RPF</h6>
+                          </div>
+                          </div>
+                      </div>
+                      <div class="card__footer">
+                      <a href="#" class="btn btn--primary">Apply Now</a>
+                      <!-- <a href="#" class="btn btn--outline">View Details</a> -->
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          </div>
+          <div class="button-section text-center mt--2">
+          <a href="scholarships.html" class="btn btn--primary">See All</a>
+          </div>
+      </div>
     </section>
     <!--Top Universities End-->
 

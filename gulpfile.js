@@ -1,4 +1,4 @@
-const {src, dest, watch, series, parallel} = require('gulp')
+const {src, dest, watch, series} = require('gulp')
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('autoprefixer')
 const postcss = require('gulp-postcss');
@@ -13,7 +13,6 @@ const browsersync = require('browser-sync').create();
 const cssFiles = [
     'asset/scss/main.scss',
     'asset/venders/swiper/css/swiper.min.css',
-    // 'asset/venders/fontawesome-free-6.2.0-web/css/all.css',
     ];
     
     //sass task for style css
@@ -38,8 +37,8 @@ const cssFiles = [
     const jsFiles = [
         'asset/venders/jquery/jquery-3.7.0.min.js',
         'asset/venders/swiper/js/swiper-bundle.min.js', 
-        'asset/venders/gsap/gsap.min.js',
-        'asset/venders/gsap/scrollTrigger-3.6.1.min.js',
+        // 'asset/venders/gsap/gsap.min.js',
+        // 'asset/venders/gsap/scrollTrigger-3.6.1.min.js',
         'asset/js/main.js'
     ]
 

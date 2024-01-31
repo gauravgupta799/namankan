@@ -89,30 +89,57 @@ const swiper1 = new Swiper(".heroSwiper",{
 /* ====== Swipers End ====== */
 
 
-/* ====== Toggle Password Start ======= */
-// const showPasswordButton = document.querySelectorAll('.eye-btn');
+/* ========== Show/Hide Video Popup start =========== */
+function openVideo(videoId) {
+  // Replace the video source URL with your actual video URL
+  var videoSource = 'https://www.youtube.com/embed/' + videoId;
+  // Set the iframe source and display the popup
+  document.getElementById('videoIframe').src = videoSource;
+  document.getElementById('videoPopup').style.display = 'flex';
+}
 
-const passwordInputFields = document.querySelectorAll(".form-password");
-passwordInputFields.forEach((passwordField) => {
-  console.log(passwordField);
-  const passField = passwordField.children[0];
-  const eyeBtn = passwordField.children[1];
-  let eyeClose = eyeBtn.children[0];
-  let eyeOpen = eyeBtn.children[1];
-  eyeBtn.addEventListener("click", (e) =>{
-    console.log(e)
-    e.preventDefault()
-    if(passField.type === "password"){
-      passField.type="text";
-      eyeClose.style.display = "none";
-      eyeOpen.style.display = "block";
-    }else{
-      passField.type="password";
-      eyeClose.style.display = "block";
-      eyeOpen.style.display = "none";
-    }
+const videoCards = document.querySelectorAll(".video-card");
+const closeButton = document.getElementById("close-btn");
+if(videoCards !== null && closeButton !== null) {
+  videoCards.forEach((videoCard, i) => {
+    videoCard.addEventListener("click" , ()=>{
+      const videoId = videoCard.dataset.videoid;
+      openVideo(videoId);
+    });
   });
-});
+  
+  // Close The Video
+  closeButton.addEventListener("click", ()=> {
+    document.getElementById('videoIframe').src = '';
+    document.getElementById('videoPopup').style.display = 'none';
+  });
+}
+
+/* ========== Show/Hide Video Popup end =========== */
+
+
+/* ====== Toggle Password Start ======= */
+const passwordInputFields = document.querySelectorAll(".form-password");
+if(passwordInputFields !== null) {
+  passwordInputFields.forEach((passwordField) => {
+    const passField = passwordField.children[0];
+    const eyeBtn = passwordField.children[1];
+    let eyeClose = eyeBtn.children[0];
+    let eyeOpen = eyeBtn.children[1];
+    eyeBtn.addEventListener("click", (e) =>{
+      e.preventDefault();
+      if(passField.type === "password"){
+        passField.type="text";
+        eyeClose.style.display = "none";
+        eyeOpen.style.display = "block";
+      }else{
+        passField.type="password";
+        eyeClose.style.display = "block";
+        eyeOpen.style.display = "none";
+      }
+    });
+  });
+}
 /* ====== Toggle Password End ======= */
 
 
@@ -130,6 +157,117 @@ $('#login-btn').on('click', function () {
   $("#login-btn").addClass("active");
 })
 /* ====== Signup/Login Form End ====== */
+
+// Tabs Start
+function openTab(btn, tabIndex) {
+  const tabContent = document.querySelectorAll(".tab-content");
+  tabContent.forEach((content, index) => {
+    content.classList.toggle("active", index === tabIndex);
+    btn.classList.toggle("active");
+  });
+}
+const tabBtns  = document.querySelectorAll(".tab-btn");
+if(tabBtns !== null){
+  tabBtns.forEach((btn, index) => {
+    btn.addEventListener("click", ()=> openTab(btn, index));
+  });
+}
+
+// tabBtns.forEach((tab, i) => {
+//   tab.addEventListener("click", ()=>{
+//     const btnActiveClass = "btn--active";
+//     // remove active class from all buttons
+//     tabBtns.forEach((el)=> el.classList.remove(btnActiveClass));
+//     // activate the clicked button
+//     tab.classList.add(btnActiveClass);
+//     // remove show class from all content and add it to the clicked one
+//     let targetContent = document.getElementById(`tab${i+1}`);
+//     targetContent.classList.remove("show");
+//     targetContent.classList.add("show");
+//   });
+// })
+
+// Tabs End
+
+
+// Toggle Search Input Field
+let searchIcons = document.querySelectorAll(".search-icon");
+if(searchIcons !== null) {
+  searchIcons.forEach((searchIcon, searchIconIndex) => {
+    const searchInputs = document.querySelectorAll(".widgets__search");
+    searchIcon.addEventListener("click", () => {
+      searchInputs.forEach((searchInput, searchInputIndex) => {
+        if(searchIconIndex === searchInputIndex){
+          searchInput.classList.toggle("show");
+        }
+      });
+    });
+  });
+}
+
+// Stream Array Lists
+document.addEventListener('DOMContentLoaded', function (){
+
+  const courseStreams = ["Medical", "Dental", "Ayurveda","Naturopathy And Yogic Science", "Homeopathy", "Veternity", "Engineering", "Allied Health", "Pharmacy", "Designing", "Law", "Architecture", "Science", "Nursing", "Computer",
+  "BBA", "MBA", "Commerce", "Arts & Humanities"];
+
+  const ownerships = ["Public", "Private", "Deemed", "Autonomous", "Government"];
+
+  const cities = ["Belgaum", "Hubli", "Dharwad", "Mysuru", "Davanaqere", "Vijaypura", "Bidar", "Raichur", 
+  "Bangalore", "Manipal", "Mangalore", "Ramanagaram", "Kolar", "Shivamoga", "Chikkaballapur", "Gulbarga", 
+  "Dakshina Kannada", "Tamkur", "Bellary"]
+
+  // Create list items with checkboxes and labels
+  var listItem;
+  function createInputLists(item){
+      listItem = document.createElement("li");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.name ='course';
+      checkbox.value = item;
+      checkbox.id = item;
+
+      const label = document.createElement("label");
+      label.setAttribute("for", item);
+      label.appendChild(document.createTextNode(item));
+
+      // Append checkbox and label to the list item
+      listItem.appendChild(checkbox);
+      listItem.appendChild(label);
+  }
+
+
+//  Streams
+  courseStreams.forEach(function(stream) {
+    createInputLists(stream);
+    // var courseList = document.querySelector(".widgets__lists");
+    var courseList = document.getElementById("stream");
+    if(courseList !== null) {
+      courseList.appendChild(listItem);
+    }
+  });
+
+  // Ownership
+  ownerships.forEach((ownership)=>{
+    createInputLists(ownership);
+    var ownerList = document.getElementById("ownership");
+    if(ownerList !== null) {
+      ownerList.appendChild(listItem);
+    }
+  });
+
+  //  Cities
+  cities.forEach((city)=>{
+    createInputLists(city);
+    var citiesList = document.getElementById("city");
+    if(citiesList !== null) {
+      citiesList.appendChild(listItem);
+    }
+  });
+
+
+});
+
 
 /* ====== Active Page Link Start ====== */
 const windowPathName = window.location.pathname;
