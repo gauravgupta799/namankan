@@ -1,0 +1,87 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+.upcoming-exam-figure{
+    // @include flex-center-vertical;
+    // gap:1em;
+    position: relative;
+    .img-box{
+        position: relative;
+        // @include flex-center;
+        
+        img{
+            @include border-radius(10px);
+        }
+        h6{
+            position: absolute;
+            top: 0;
+            color:$clr-white;
+            background: rgba(0,0,0,.5);
+            @include border-radius(10px);
+            width: 100%;
+            height: calc(100% - 7px);
+            @include flex-center;
+        }
+    }
+}
+
+#card-wrapper{
+    min-height: 8rem;
+    text-align: center;
+}
+
+.streams-list{
+    padding:em(20);
+    li{
+        display: inline-block;
+        font-size: rem(16);
+        width: 48%;
+        padding: em(5);
+       a{
+        color:$clr-black;
+        position: relative;
+            &::before{
+                content: "*";
+                font-family: boxicons!important;
+                @include flex-center;
+                display: inline-block;
+                position: relative;
+                left: -8px;
+                top: 3px;
+                border-radius: 50%;
+                font-size: rem(16);
+                @include dimensions(rem(20), rem(20));
+                color: $clr-primary;
+                border: 1px solid $clr-primary;
+            }
+        }
+        &:hover{
+            font-weight: bold;
+        }
+    }
+}
+
+.heading-bg{
+    background:url("../../../asset/images/heading-bg.png");
+    background-repeat:no-repeat;
+    @include flex-center;
+    padding-block:em(48);
+    border-radius:10px 10px 0px 0px;
+    h5{
+        @include flex-center-vertical;
+        gap:rem(10);
+        color:$clr-white;
+        img{
+            width: rem(35);
+            height: auto;
+        }
+    }
+}
+.card-course-figure{
+    img{
+        border-radius:10px 10px 0px 0px;
+    }
+}

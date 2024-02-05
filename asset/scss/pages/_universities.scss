@@ -8,12 +8,11 @@
     background: $clr-bg-2;
     padding-block:em(16);
     ol{
-        @include flex-center-vertical;
-        gap:rem(16);
+        @include flex-center-vertical;        gap:rem(16);
         li + li{
             position: relative;
             &::before{
-                content: "\ea50";
+                content: ">";
                 display: inline-block;
                 padding-right: em(10);
                 color: $clr-black;

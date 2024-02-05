@@ -1,0 +1,74 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.admission{
+    &__list{
+        padding:em(16);
+        background: rgba(0,0,0,0.12);
+        border-radius:0 0 10px 10px;
+        li{
+            display: flex;
+            align-items: center;
+            gap:rem(16);
+            background: $clr-white;
+            @include border-radius(10px);
+            padding: em(10);
+            margin-bottom: rem(16);
+            figure{
+                width: rem(180);
+                height: rem(100);
+                img{
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            a{
+                color:$clr-black;
+                @include transition(all, 0.25s, ease-out);
+                &:hover{
+                    font-weight: bold;
+                }
+            }
+        }
+
+    }
+}
+
+.card-body-blog{
+    padding:em(16);
+}
+.card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.share-this{
+    &__modal-body{
+        h4{
+            color:$clr-black;
+        }
+    }
+    &__socials{
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        gap:rem(32);
+    }
+    svg{
+        width: em(30);
+        height: em(30);
+    }
+    &:hover{
+        cursor: pointer;
+        svg{
+            path{
+                fill:$clr-grey-dark;
+            }
+        }
+    }
+}

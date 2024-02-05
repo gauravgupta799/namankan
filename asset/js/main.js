@@ -6,9 +6,9 @@ const header = document.querySelector('.header');
 window.onload = () => {
   const loader = document.querySelector(".loader");
   loader.style.display = "none";
-  setTimeout(() => {
-    toogleModal();
-  },5000)
+  // setTimeout(() => {
+  //   toogleModal();
+  // },5000)
 }
 /* ====== Loader End ======= */
 
@@ -172,21 +172,6 @@ if(tabBtns !== null){
     btn.addEventListener("click", ()=> openTab(btn, index));
   });
 }
-
-// tabBtns.forEach((tab, i) => {
-//   tab.addEventListener("click", ()=>{
-//     const btnActiveClass = "btn--active";
-//     // remove active class from all buttons
-//     tabBtns.forEach((el)=> el.classList.remove(btnActiveClass));
-//     // activate the clicked button
-//     tab.classList.add(btnActiveClass);
-//     // remove show class from all content and add it to the clicked one
-//     let targetContent = document.getElementById(`tab${i+1}`);
-//     targetContent.classList.remove("show");
-//     targetContent.classList.add("show");
-//   });
-// })
-
 // Tabs End
 
 
@@ -204,6 +189,18 @@ if(searchIcons !== null) {
     });
   });
 }
+
+/* ======== Share this Start =========== */
+const shareThisBtns = document.querySelectorAll(".share-this");
+shareThisBtns.forEach((shareBtn)=>{
+  shareBtn.addEventListener("click", ()=>{
+    const shareThisModal = document.getElementById("share-this-modal");
+    shareThisModal.style.display="block";
+  });
+})
+/* ======== Share-this End =========== */
+
+
 
 // Stream Array Lists
 document.addEventListener('DOMContentLoaded', function (){
@@ -264,8 +261,6 @@ document.addEventListener('DOMContentLoaded', function (){
       citiesList.appendChild(listItem);
     }
   });
-
-
 });
 
 

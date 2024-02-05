@@ -264,63 +264,6 @@
     background: rgba(86,148,227,.06);
 }
 
-// .play-btn{
-//     width: 94px;
-//     height: 94px;
-//     background: radial-gradient(#00a3f4 50%,rgb(95 122 218/40%) 52%);
-//     border-radius: 50%;
-//     display: block;
-//     position: absolute;
-//     left: calc(50% - 47px);
-//     top: calc(50% - 47px);
-//     overflow: hidden;
-//     cursor: pointer;
-//     &::before{
-//         content: "";
-//         position: absolute;
-//         width: 120px;
-//         height: 120px;
-//         animation-delay: 0s;
-//         animation: pulsate-btn 2s;
-//         animation-direction: forwards;
-//         animation-iteration-count: infinite;
-//         animation-timing-function: steps;
-//         opacity: 1;
-//         border-radius: 50%;
-//         border: 5px solid rgba(13,66,255,.7);
-//         top: -15%;
-//         left: -15%;
-//         background: rgba(198,16,0,0);
-//     }
-//     &::after{
-//         content: "";
-//         position: absolute;
-//         left: 50%;
-//         top: 50%;
-//         -webkit-transform: translateX(-40%) translateY(-50%);
-//         transform: translateX(-40%) translateY(-50%);
-//         width: 0;
-//         height: 0;
-//         border-top: 10px solid transparent;
-//         border-bottom: 10px solid transparent;
-//         border-left: 15px solid #fff;
-//         z-index: 100;
-//         transition: all .4s cubic-bezier(.55,.055,.675,.19);
-//     }
-//     @keyframes pulsate-btn{
-//         0%{
-//             border-width: 1px;
-//         }
-//         50%{
-//             border-width: 2.5px;
-//         }
-//         100%{
-//             border-width: 5px;
-//         } 
-//     }
-
-// }
-
 // Scroll To Top
 .backToTop{
     position: fixed;
@@ -404,4 +347,16 @@
     font-size: rem(44);
     box-shadow: 0px 2px 310x #999;
     z-index: 1059;
+}
+
+.course-detail{
+    background:url("../../../asset/images/course-bg.jpg") rgb(239, 243, 246);
+}
+.detail-wrapper{
+    p, ul{
+        margin-bottom: 1rem;
+    }
+   li{
+        list-style: disc !important;
+    }
 }
