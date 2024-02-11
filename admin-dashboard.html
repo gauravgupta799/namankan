@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./asset/logos/study-logo.png" type="image/svg+xml">
+    <title>Dashboard</title>
+    <!-- all css bundled and minified -->
+    <link rel="stylesheet" href="dist/bundle.min.css" type="text/css">
+</head>
+    <aside class="mobile-sidebar" id="mobile-sidebar">
+        <nav class="mobile-nav">
+            <ul>
+                <li>
+                    <a href="./index.html" class="mt--1">
+                        <img src="./asset/logos/study-logo.png" alt="" class="img-fluid"/>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="dashboard">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="customers">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="messages">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="help">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="settings">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="password">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+     <!-- overlay start -->
+     <div class="overlay"></div>
+     <!-- overlay end -->
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="page--container">
+        <aside class="navigation" id="default-navigation">
+            <div class="my--1">
+                <a href="./index.html" class="">
+                    <img src="./asset/logos/study-logo.png" alt="" class="img-fluid"/>
+                </a>
+                <button class="" id="close-menu-btn">
+                    <ion-icon name="close-outline" id="close-outline"></ion-icon>
+                </button>
+            </div>
+            <ul class="navigation-menu">
+                <li class="active">
+                    <a role="button" class="link" data-content="dashboard">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="customers">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="messages">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="help">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="settings">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button" class="link" data-content="password">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a role="button">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- ========================= Main ==================== -->
+        <main class="main--admin">
+            <section class="">
+                <div class="page--container">
+                    <div class="topbar">
+                        <div class="toggle">
+                            <ion-icon name="menu-outline" id="menu-outline"></ion-icon>
+                        </div>
+        
+                        <div class="search">
+                            <label>
+                                <input type="text" placeholder="Search here">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </label>
+                        </div>
+        
+                        <div class="profile">
+                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid profile__img">
+                            <div class="profile__info">
+                                <div class="profile__author-name">
+                                    <p>Robar Smith</p>
+                                    <span>Designation</span>
+                                </div>
+                                <div class="profile__info-details">
+                                    <ul>
+                                        <li><a href="#profile">My Profile </a></li>
+                                        <li><a href="#setting">Settings</a></li>
+                                        <li><a href="#logout">Log Out </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tab-contents active mt--2"  id="dashboard">
+                <div class="page--container">
+                    <!-- ======================= Cards ================== -->
+                    <div class="cardBox">
+                        <div class="card">
+                            <div>
+                                <div class="numbers">1,504</div>
+                                <div class="cardName">Daily Views</div>
+                            </div>
+        
+                            <div class="iconBx">
+                                <ion-icon name="eye-outline"></ion-icon>
+                            </div>
+                        </div>
+        
+                        <div class="card">
+                            <div>
+                                <div class="numbers">80</div>
+                                <div class="cardName">Sales</div>
+                            </div>
+        
+                            <div class="iconBx">
+                                <ion-icon name="cart-outline"></ion-icon>
+                            </div>
+                        </div>
+        
+                        <div class="card">
+                            <div>
+                                <div class="numbers">284</div>
+                                <div class="cardName">Comments</div>
+                            </div>
+        
+                            <div class="iconBx">
+                                <ion-icon name="chatbubbles-outline"></ion-icon>
+                            </div>
+                        </div>
+        
+                        <div class="card">
+                            <div>
+                                <div class="numbers">$7,842</div>
+                                <div class="cardName">Earning</div>
+                            </div>
+        
+                            <div class="iconBx">
+                                <ion-icon name="cash-outline"></ion-icon>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div>
+                                <div class="numbers">$7,842</div>
+                                <div class="cardName">Earning</div>
+                            </div>
+        
+                            <div class="iconBx">
+                                <ion-icon name="cash-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- ================ Order Details List ================= -->
+                    <div class="details mt--2">
+                        <div class="recentOrders">
+                            <div class="cardHeader">
+                                <h5>Recent Orders</h5>
+                                <a role="button" class="btn btn--primary">View All</a>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Price</td>
+                                        <td>Payment</td>
+                                        <td>Status</td>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    <tr>
+                                        <td>Star Refrigerator</td>
+                                        <td>$1200</td>
+                                        <td>Paid</td>
+                                        <td><span class="status delivered">Delivered</span></td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td>Dell Laptop</td>
+                                        <td>$110</td>
+                                        <td>Due</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td>Apple Watch</td>
+                                        <td>$1200</td>
+                                        <td>Paid</td>
+                                        <td><span class="status return">Return</span></td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td>Addidas Shoes</td>
+                                        <td>$620</td>
+                                        <td>Due</td>
+                                        <td><span class="status inProgress">In Progress</span></td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td>Star Refrigerator</td>
+                                        <td>$1200</td>
+                                        <td>Paid</td>
+                                        <td><span class="status delivered">Delivered</span></td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td>Dell Laptop</td>
+                                        <td>$110</td>
+                                        <td>Due</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td>Apple Watch</td>
+                                        <td>$1200</td>
+                                        <td>Paid</td>
+                                        <td><span class="status return">Return</span></td>
+                                    </tr>
+        
+                                    <tr>
+                                        <td>Addidas Shoes</td>
+                                        <td>$620</td>
+                                        <td>Due</td>
+                                        <td><span class="status inProgress">In Progress</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+        
+                        <!-- ================= New Customers ================ -->
+                        <div class="recentCustomers">
+                            <div class="cardHeader">
+                                <h5>Recent Students</h6>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td width="60px">
+                                        <div class="imgBx">
+                                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>David <br> <span>Italy</span></h4>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td width="60px">
+                                        <div class="imgBx">
+                                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>Amit <br> <span>India</span></h4>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td width="60px">
+                                        <div class="imgBx">
+                                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>David <br> <span>Italy</span></h4>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td width="60px">
+                                        <div class="imgBx">
+                                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>Amit <br> <span>India</span></h4>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td width="60px">
+                                        <div class="imgBx">
+                                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>David <br> <span>Italy</span></h4>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td width="60px">
+                                        <div class="imgBx">
+                                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>Amit <br> <span>India</span></h4>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td width="60px">
+                                        <div class="imgBx">
+                                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>David <br> <span>Italy</span></h4>
+                                    </td>
+                                </tr>
+        
+                                <tr>
+                                    <td width="60px">
+                                        <div class="imgBx">
+                                            <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h4>Amit <br> <span>India</span></h4>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================= Customers ================== -->
+            <section class="tab-contents"  id="customers">
+                <div class="page--container">
+                    <h2 class="">Customers</h2>
+                    <p class="mt--1">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit fugit suscipit impedit deserunt autem culpa ipsa corrupti ipsam explicabo itaque omnis vel voluptatibus labore nesciunt quia sint ab minus mollitia tempore, cumque expedita sed unde soluta. Voluptates beatae impedit et, ipsa, corporis dolor perferendis, aperiam at veritatis reiciendis iste officiis?
+                    </p>
+                     <!-- ================= New Customers ================ -->
+                     <div class="recentCustomers">
+                        <div class="cardHeader">
+                            <h5>Recent Students</h6>
+                        </div>
+                        <table>
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx">
+                                        <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>David <br> <span>Italy</span></h4>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx">
+                                        <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>Amit <br> <span>India</span></h4>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx">
+                                        <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>David <br> <span>Italy</span></h4>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx">
+                                        <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>Amit <br> <span>India</span></h4>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx">
+                                        <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>David <br> <span>Italy</span></h4>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx">
+                                        <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>Amit <br> <span>India</span></h4>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx">
+                                        <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>David <br> <span>Italy</span></h4>
+                                </td>
+                            </tr>
+    
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx">
+                                        <img src="./asset/images/testimnl-1.jpeg" alt="" class="img-fluid">
+                                    </div>
+                                </td>
+                                <td>
+                                    <h4>Amit <br> <span>India</span></h4>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ======================= Messages ================== -->
+            <section class="tab-contents" id="messages">
+                <div class="page--container">
+                    <h2 class="">Messages</h2>
+                    <p class="mt--1">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe incidunt sequi nulla cupiditate fugiat, dolorem eos! Vitae quae a rerum!
+                    </p>
+                </div>
+            </section>
+
+            <!-- ======================= Helps ================== -->
+            <section class="tab-contents" id="help">
+                <div class="page--container">
+                    <h2 class="">Help</h2>
+                    <p class="mt--1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure animi molestiae consectetur explicabo quia commodi dolore blanditiis qui quae officiis obcaecati, doloribus optio error maiores quidem eligendi aspernatur placeat? Eos rem, necessitatibus voluptas unde molestias vero. Debitis vitae natus, reprehenderit numquam voluptatem eaque harum voluptate at, atque, maiores officiis doloremque?
+                    </p>             
+                </div>
+            </section>
+
+            <!-- ======================= Settings ================== -->
+            <section class="tab-contents"  id="settings">
+                <div class="page--container">
+                    <h2 class="">Settings</h2>
+                    <p class="mt--1">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure animi molestiae consectetur explicabo quia commodi dolore blanditiis qui quae officiis obcaecati, doloribus optio error maiores quidem eligendi aspernatur placeat? Eos rem, necessitatibus voluptas unde molestias vero. Debitis vitae natus, reprehenderit numquam voluptatem eaque harum voluptate at, atque, maiores officiis doloremque?
+                    </p>            
+                </div>
+            </section>
+
+            <!-- ======================= Password ================== -->
+            <section class="tab-contents" id="password">
+                <div class="page--container">
+                    <div class="col-sm-10  col-xl-6 mx-auto text-center mt--5">
+                        <div class="form-wrapper">
+                            <h6 class="">Change Password</h6>  
+                            <form action="" class="form mt--1">
+                                <div class="form-group">
+                                    <label for="old_pass">Old password: *</label>
+                                    <input type="text" name="old_pass" id="old_pass" class="form-control" required pattern=".{6,}" data-error="At least 6 characters.">
+                                    <div class="err-msg"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="new_pass">New password: *</label>
+                                    <input type="password" name="new_pass" id="new_pass" class="form-control" required >
+                                    <i class="show-pass fa fa-eye" aria-hidden="true"></i>
+                                    <div class="err-msg"></div>
+                                </div>
+        
+                                <button type="submit" class="btn btn--primary mt--2">Save changes</button>
+                            </form>        
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- scroll-to-top start -->
+            <div class="backToTop">
+                <div class="backToTop__wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 384 512"><path opacity="1" fill="#37475a" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+                </div>
+                </div>
+            <!-- scroll-to-top end -->
+
+        </main>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="dist/bundle.min.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>

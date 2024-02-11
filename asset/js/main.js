@@ -6,9 +6,9 @@ const header = document.querySelector('.header');
 window.onload = () => {
   const loader = document.querySelector(".loader");
   loader.style.display = "none";
-  // setTimeout(() => {
-  //   toogleModal();
-  // },5000)
+  setTimeout(() => {
+    toogleModal();
+  },5000);
 }
 /* ====== Loader End ======= */
 
@@ -23,8 +23,10 @@ function toogleModal(){
   modalDialog.classList.toggle("show");
   html.classList.toggle("overflow-hidden")
 }
-broucherBtn.addEventListener("click", toogleModal);
-closeBtn.addEventListener("click", toogleModal);
+if(broucherBtn !== null){
+  broucherBtn.addEventListener("click", toogleModal);
+  closeBtn.addEventListener("click", toogleModal);
+}
 
 const applyNowBtn = document.getElementById("apply-now-btn");
 if(applyNowBtn !== null){
@@ -34,23 +36,26 @@ if(applyNowBtn !== null){
 
 /* ====== Scroll to Top Start ======= */
 var backToTopButton = document.querySelector('.backToTop');
-backToTopButton.addEventListener('click', function (){
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+if(backToTopButton !== null){
+  backToTopButton.addEventListener('click', function (){
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
-});
-
-function backToTop() {
-  if (window.scrollY > 350) {
-    backToTopButton.classList.add("show");
-    broucherBtn.classList.add("hide");
-  } else {
-    backToTopButton.classList.remove("show");
-    broucherBtn.classList.remove("hide");
+  
+  function backToTop() {
+    if (window.scrollY > 350) {
+      backToTopButton.classList.add("show");
+      // broucherBtn.classList.add("hide");
+    } else {
+      backToTopButton.classList.remove("show");
+      // broucherBtn.classList.remove("hide");
+    }
   }
+  window.addEventListener('scroll', backToTop);
 }
-window.addEventListener('scroll', backToTop)
+
 /* ====== Scroll to Top End ======= */
 
 
@@ -91,13 +96,10 @@ const swiper1 = new Swiper(".heroSwiper",{
 
 /* ========== Show/Hide Video Popup start =========== */
 function openVideo(videoId) {
-  // Replace the video source URL with your actual video URL
   var videoSource = 'https://www.youtube.com/embed/' + videoId;
-  // Set the iframe source and display the popup
   document.getElementById('videoIframe').src = videoSource;
   document.getElementById('videoPopup').style.display = 'flex';
 }
-
 const videoCards = document.querySelectorAll(".video-card");
 const closeButton = document.getElementById("close-btn");
 if(videoCards !== null && closeButton !== null) {
@@ -114,7 +116,6 @@ if(videoCards !== null && closeButton !== null) {
     document.getElementById('videoPopup').style.display = 'none';
   });
 }
-
 /* ========== Show/Hide Video Popup end =========== */
 
 
@@ -192,15 +193,34 @@ if(searchIcons !== null) {
 
 /* ======== Share this Start =========== */
 const shareThisBtns = document.querySelectorAll(".share-this");
-shareThisBtns.forEach((shareBtn)=>{
-  shareBtn.addEventListener("click", ()=>{
-    const shareThisModal = document.getElementById("share-this-modal");
-    shareThisModal.style.display="block";
+const shareThisCloseBtn =   document.querySelector("#share-this-close-btn");
+if(shareThisBtns !== null && shareThisCloseBtn !== null) {
+  const shareThisModal = document.querySelector(".share-this__modal");
+  shareThisBtns.forEach((shareBtn)=>{
+    shareBtn.addEventListener("click", ()=>{
+      shareThisModal.style.display="block";
+      html.classList.add("overflow-hidden");
+    });
   });
-})
+  // Close the modal
+  shareThisCloseBtn.addEventListener("click", ()=>{
+    shareThisModal.style.display = "none";
+    html.classList.remove("overflow-hidden");
+  });
+}
 /* ======== Share-this End =========== */
 
-
+/* ======== Toggle Fitler Sidebar Start =========== */
+const filterMenuBtn = document.querySelector("#filter-menu-button");
+if(filterMenuBtn !== null){
+  filterMenuBtn.addEventListener("click", function(){
+    const filterSidebar = document.querySelector(".filter__sidebar");
+    filterSidebar.classList.toggle('is-open');
+    const filterContentSidebar = document.querySelector(".filter__content-container");
+    filterContentSidebar.classList.toggle('is-open');
+  });
+}
+/* ======== Toggle Fitler Sidebar End =========== */
 
 // Stream Array Lists
 document.addEventListener('DOMContentLoaded', function (){
@@ -232,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function (){
       listItem.appendChild(checkbox);
       listItem.appendChild(label);
   }
-
 
 //  Streams
   courseStreams.forEach(function(stream) {

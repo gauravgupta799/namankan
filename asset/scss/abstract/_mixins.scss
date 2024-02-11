@@ -30,6 +30,14 @@
     align-items: center;
     justify-content: space-between;
 }
+@mixin flex-start-horizontal{
+    display: flex;
+    justify-content: flex-start;
+}
+@mixin flex-start-vertical{
+    display: flex;
+    align-items: flex-start;
+}
 @mixin flex-end-horizontal{
     display: flex;
     justify-content: flex-end;

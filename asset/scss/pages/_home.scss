@@ -269,7 +269,7 @@
     position: fixed;
     bottom: rem(80);
     right: rem(18);
-    z-index: 10;
+    z-index: 5;
     @include dimensions(rem(45), rem(45));
     background: $clr-teriary;
     @include border-radius(50%);
@@ -287,6 +287,7 @@
     }
     &:hover{
         background: $clr-grey-light;
+        @include transition(all, 0.35s, ease-out);
         cursor: pointer;
         svg{
             path{
@@ -346,7 +347,7 @@
     color: $clr-white;
     font-size: rem(44);
     box-shadow: 0px 2px 310x #999;
-    z-index: 1059;
+    z-index: 5;
 }
 
 .course-detail{
@@ -358,5 +359,17 @@
     }
    li{
         list-style: disc !important;
+    }
+}
+
+.eligibie-for-nri-quota{
+    &__container{
+        background: url("../asset/images/best-colleges.jpg") no-repeat;
+        background-size: cover;
+        @include border-radius(10px);
+        box-shadow: 5px 5px 10px #ccc;
+        p{
+            color:$clr-white;
+        }
     }
 }

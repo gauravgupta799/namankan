@@ -100,25 +100,6 @@
     color:$clr-secondary;
 }
 
-// .footer-socials-link{
-//     @include flex-center;
-//     justify-content: space-between;
-//     padding: em(6);
-//     @include dimensions(rem(45), rem(45));
-//     @include border-radius(50%);
-//     background: transparent;
-//     @include transition(all, 0.4s, ease-out);
-//     &:hover{
-//         background: $clr-secondary;
-//         svg{
-//             transform:scale(1.2);
-//             path{
-//                 fill:$clr-primary !important;
-//             }
-//         }
-//     }
-// }
-
 .contact__socials-link{
     @include flex-center;
     padding: em(6);
@@ -157,15 +138,6 @@
     }
 }
 
-// Stars
-// .stars{
-//     .star{
-//         font-size: rem(18);
-//         color:$clr-yellow;
-//     }
-// }
-
-
 // Checked Box
 .checked-box{
     padding: em(5);
@@ -173,3 +145,20 @@
     @include border-radius(50%);
     @include flex-center;
 }
+
+.filter-menu-button{
+    display: flex;
+    align-items: center;
+    max-width: rem(80);
+    gap:rem(10);
+    .hamburger{
+        height: rem(18);
+        .menu-line{
+            margin-bottom: 3px !important;
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+    }
+  }

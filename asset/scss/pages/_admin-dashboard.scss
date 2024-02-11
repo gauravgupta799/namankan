@@ -1,0 +1,488 @@
+@use "../abstract/breakpoints" as *;
+@use "../abstract/colors" as *;
+@use "../abstract/fonts" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+
+.page--container{
+    margin:0 rem(16);
+    @include breakpoint-lg{
+        margin:0 rem(32);
+    }
+}
+
+/* ============== Navigation Start ============== */
+.navigation{
+    position: fixed;
+    height: 100%;
+    background: $clr-primary;
+    border-left: 10px solid $clr-primary;
+    @include transition(all, 0.35s);
+    overflow: hidden;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+    width: 18%;
+    @media only screen and (max-width:1280px){
+        width: 16rem;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transform:translateX(-100%);
+        transition:transform 0.35s ease-in-out;
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            transform:translateX(0); 
+        }
+    }
+}
+
+.navigation-menu{
+    position: absolute;
+    // top: 0;
+    left: 0;
+   @include full-dimensions;
+    li {
+        position: relative;
+        width: 100%;
+        list-style: none;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        transition:transform 0.25s ease-out;
+        margin-bottom: rem(10);
+        a{
+            position: relative;
+            width: 100%;
+            display: inline-flex;
+            text-decoration: none;
+            color: $clr-white;
+            .icon {
+                position: relative;
+                display: block;
+                min-width: rem(60);
+                height: rem(60);
+                line-height: 74px;
+                text-align: center;
+                ion-icon {
+                    font-size: rem(24);
+                }
+            }
+            .title {
+                position: relative;
+                display: block;
+                padding: 0 em(10);
+                height: rem(60);
+                line-height: 60px;
+                text-align: start;
+                white-space: nowrap;
+                margin-top: 4px;
+            }
+        }
+        &:hover{
+            cursor: pointer;
+            background-color: $clr-white;
+            transform:translateY(-2.5px);
+            a{
+                color:$clr-primary;
+                // position: relative;
+            }
+        }
+        &.active{
+            background-color: $clr-white;
+            a{
+                color:$clr-primary;
+            }
+        }
+    }
+}
+
+.navigation__logo-wrapper{
+    @include flex-space-between;
+}
+/* ============== Navigation End ============== */
+
+
+// Close Button
+#close-menu-btn{
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    @include flex-center;
+    @include border-radius(50%);
+    background: transparent;
+    ion-icon{
+        font-size: rem(36);
+        color:$clr-white;
+
+    }
+    @include breakpoint-xl{
+        display: none;
+    }
+    &:hover{
+        background:$clr-white;
+        cursor: pointer;
+        ion-icon{
+            color:$clr-primary;
+        }
+    }
+}
+
+
+/* ============= Main Start ==============*/
+.main{
+    &--admin{
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        background: $clr-white;
+        transition: 0.5s;
+        width: 100%;
+        @include breakpoint-xl{
+            left: rem(230);
+        }
+        @include breakpoint-xxl{
+            left: rem(300);
+            width: calc(100% - 300px);
+        }
+        @include breakpoint-xl{
+            &.collapse{
+                width: calc(100% - 80px);
+                left: rem(80);
+            }
+        }
+    }
+}
+/* ============= Main End ==============*/
+
+
+/*================= Tab Container Start ============ */
+ .tab-contents{
+    display: none;
+    &.active{
+        display: block;
+    }
+ }
+/*================= Tab Container End ============ */
+
+
+/* ================= Topbar ================== */
+.topbar {
+    @include dimensions(100%, rem(60));
+    @include flex-space-between;
+    // padding: 0 em(10);
+    .toggle {
+        position: relative;
+        @include flex-center;
+        font-size: rem(40);
+        @include transition(all, 0.35s, ease-out);
+        &:hover{
+            cursor: pointer;
+            opacity: 0.8;
+            @include transition(scale(1.02));
+        }
+    }
+    .search {
+        position: relative;
+        // width: rem(400);
+        margin-inline:rem(10);
+        label {
+            position: relative;
+            width: 100%;
+            input {
+                @include dimensions(100%, rem(40));
+                @include border-radius(40px);
+                padding:em(5) em(20);
+                padding-left: em(35);
+                font-size: rem(18);
+                outline: none;
+                border: 1px solid $clr-grey-light;
+                caret-color:$clr-primary;
+                &::placeholder{
+                    color:$clr-grey-light;
+                }
+            }
+            ion-icon {
+                position: absolute;
+                top: 0;
+                left: 10px;
+                font-size: rem(18);
+            }
+        }
+          
+    }
+    .profile {
+        display: flex;
+        position: relative;
+        &__img{
+            max-width: 40px;
+            @include border-radius(50%);
+        }
+        &__info{
+            position: absolute;
+            right: 0;
+            top: rem(40);
+            background-color: $clr-white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+            text-align: left;
+            width: rem(220);
+            padding: 0;
+            @include transition(all, 0.25s, ease-out);
+            @include border-radius(10px);
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            @include transform(translateY(-30px));
+            &::before{
+                content: '';
+                top: -10px;
+                right: 11px;
+                position: absolute;
+                @include dimensions(0,0);
+                border-style: solid;
+                border-width: 0 11px 12px;
+                border-color: transparent transparent $clr-primary transparent;
+                z-index: 2;
+            }
+        }
+        &__author-name{
+            padding: em(20) em(24);
+            background: $clr-primary;
+            color: $clr-white;
+            border-radius: 10px 10px 0 0;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            p{
+                font-size: rem(18);
+                line-height: 1;
+                font-weight: 500;
+            }
+            span{
+                font-size: rem(14);
+             
+            }
+        }
+        &__info-details{
+            ul{
+                margin-top: 10px;
+                li{
+                    padding: em(8) em(24);
+                    transition:transform 0.25s ease-out;
+                    a{
+                        color:$clr-black-2;
+                        font-size: rem(16);
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        background-color: $clr-primary;
+                        transform:translateY(-2px);
+                        a{
+                            color:$clr-white;
+                        }
+                        &:last-child{
+                            border-radius: 0 0 10px 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover{
+            .profile__info{
+                opacity: 1;
+                visibility: visible;
+                @include transform(translateY(10px));
+            }
+        }
+    }
+}
+
+/* ============== Cards ===============*/
+.cardBox {
+    position: relative;
+    width: 100%;
+    // padding: em(16);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:rem(16);
+    .card{
+        position: relative;
+        background: $clr-white;
+        padding: em(16);
+        @include border-radius(20px);
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+        transition:transform 0.25s ease-out;
+        @media only screen and (min-width:492px){
+            width: min(100%, 220px);
+        }
+        @include breakpoint-sm{
+            width: min(100%, 290px);
+        }
+        .numbers {
+            position: relative;
+            font-weight: 500;
+            font-size: clamp(1.2rem, 4vw + 1rem, 2.5rem);
+            color: $clr-primary;
+            
+        }
+        .cardName {
+            color: $clr-grey-light;
+            font-size: rem(17);
+            margin-top: rem(5);
+        }
+        .iconBx {
+            font-size: clamp(2rem, 4vw + 1rem, 3rem);
+            color: $clr-grey-light;
+        }
+        &:hover {
+            background: $clr-primary;
+            transform:scale(1.015) translateY(-4px);
+            .numbers, .cardName, .iconBx
+            {
+                color: $clr-white;
+            }
+        }
+    }
+}
+  
+/* ============== Order Details List ============ */
+.details {
+    position: relative;
+    display: grid;
+    width: 100%;
+    // padding: em(20);
+    grid-template-columns: 1fr;
+    grid-gap: rem(16);
+    @include breakpoint-md{
+        grid-template-columns: 2fr 1fr;
+    }
+    @include breakpoint-xxl{
+        grid-gap: rem(30);
+    }
+    .cardHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: rem(10);
+    }
+    table thead td {
+        font-weight: 600;
+    }
+}
+
+/* =========== Recent Orders ============== */
+.recentOrders {
+    position: relative;
+    display: grid;
+    min-height:rem(500);
+    background: $clr-white;
+    padding: em(20);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    @include border-radius(20px);
+    overflow: auto;
+    table tr {
+        color: $clr-black;
+        border:none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+        &:last-child {
+            border-bottom: none;
+        }
+        td {
+            padding: em(10);
+            &:last-child {
+                text-align: end;
+            }
+            &:nth-child(2) {
+                text-align: end;
+            }
+            &:nth-child(3) {
+                text-align: center;
+            }
+        }
+        &:hover{
+            background: $clr-primary;
+            color: $clr-white;
+        }
+    }
+}
+
+/* =========== Recent Customers ============== */
+.recentCustomers {
+    @extend .recentOrders ;
+    .imgBx {
+        position: relative;
+        @include dimensions(rem(40), rem(40));
+        @include border-radius(50px);
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+           @include full-dimensions;
+            object-fit: cover;
+        }
+    }
+    table{
+        tr{
+           td{
+                padding: em(12) em(10);
+                h4{
+                    font-size: rem(16);
+                    font-weight: 500;
+                    line-height: 1.2rem;
+                    span {
+                        font-size: rem(14);
+                        color: $clr-grey-light;
+                    }
+                }
+                &:nth-child(2) {
+                    text-align: left !important;
+                }
+            }
+            &:hover {
+                background: $clr-primary;
+                color: $clr-white;
+                h4, span {
+                    color: $clr-white;
+                }
+            }
+        }
+    }
+}
+  
+/* ================== Status ============== */
+.status{
+    padding: em(2) em(4);
+    color: $clr-white;
+    @include border-radius(4px);
+    font-size: rem(14);
+    font-weight: 500;
+    &.delivered{
+        background: $clr-green;
+    }
+    &.pending{
+        background: $clr-yellow;
+    }
+    &.return{
+        background: $clr-red;
+    }
+    &.inProgress{
+        background: $clr-primary;
+        white-space: nowrap;
+        @include breakpoint-sm{
+            white-space: normal;
+        }
+    }
+}

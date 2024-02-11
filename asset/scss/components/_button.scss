@@ -12,9 +12,9 @@
     position: relative;
     overflow: hidden;
     font-size:rem(14);
-    padding:0.625em 1.25em;
+    padding:0.625em 1em;
     color:$clr-white;
-    @include border-radius(10px);
+    @include border-radius(4px);
     @include transition(all, 0.35s, ease-out);
     text-transform: capitalize;
     z-index: 1;
@@ -87,7 +87,7 @@
 }
 
 .btn--primary{
-    background-color:$clr-secondary;
+    background-color:$clr-primary;
     border:1px solid transparent;
     &:hover{
         border-color: $clr-white;
@@ -145,7 +145,7 @@
 .btn--outline{
     &::before,
     &::after {
-        background-color: $clr-primary;
+        background-color: $clr-secondary;
     }
 }
 

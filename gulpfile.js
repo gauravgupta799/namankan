@@ -7,8 +7,6 @@ const terser = require('gulp-terser');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const browsersync = require('browser-sync').create();
-// import br from ("./asset/scss/main.scss");
-
 
 const cssFiles = [
     'asset/scss/main.scss',
@@ -39,6 +37,7 @@ const cssFiles = [
         'asset/venders/swiper/js/swiper-bundle.min.js', 
         // 'asset/venders/gsap/gsap.min.js',
         // 'asset/venders/gsap/scrollTrigger-3.6.1.min.js',
+        'asset/js/admin.js',
         'asset/js/main.js'
     ]
 

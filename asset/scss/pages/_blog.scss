@@ -48,16 +48,44 @@
 }
 
 .share-this{
+    &__modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 8;
+        transition:all 0.25s ease-out;
+        display: none;
+    }
     &__modal-body{
+        position: fixed;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform:translateY(-50%);
+        .modal-content{
+            height: 280px !important;
+        }
         h4{
             color:$clr-black;
         }
     }
     &__socials{
-        display: flex;
-        // align-items: center;
-        justify-content: center;
+        @include flex-center;
         gap:rem(32);
+        li{
+            a{
+                display: flex;
+                transition:transform 0.35s ease-out;
+            }
+            &:hover{
+                a{
+                    transform:scale(1.5);
+                }
+            }
+        }
     }
     svg{
         width: em(30);
@@ -65,10 +93,5 @@
     }
     &:hover{
         cursor: pointer;
-        svg{
-            path{
-                fill:$clr-grey-dark;
-            }
-        }
     }
 }

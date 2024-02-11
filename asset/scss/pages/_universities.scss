@@ -58,3 +58,30 @@
         }
     }
 }
+
+// Collapsable Sidebar Filter
+.filter{
+    &__container{
+        max-width: 100%;
+        display: flex;
+    }
+    &__sidebar{
+        max-width:25%;
+        margin-right: rem(32);
+        overflow: hidden;
+        @include transition(max-width, 0.35s, ease);
+        &.is-open{
+            max-width: 0%;
+            margin-right: 0;
+        }
+     
+    }
+    &__content-container{
+        max-width: 75%;
+        @include transition(max-width, 0.4s, ease);
+        &.is-open{
+            max-width: 100%;
+        }
+    }
+}
+
